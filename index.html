@@ -11,95 +11,121 @@
   <script defer src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="styles.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@100&display=swap"
+    rel="stylesheet">
 </head>
 
-<body>
-  <nav class="navbar bg-base-500 flex justify-between items-center 0bg-slate-400">
-    <div class="flex 0bg-red-200 p-2 px-3">
-      <a class="font-semibold normal-case text-xl whitespace-nowrap">Ilra CakeArt</a>
-    </div>
-    <div class="md:flex space-x-3 0bg-blue-200 hidden">
-      <div class="font-semibold normal-case text-sm p-2 px-4 cursor-pointer 0bg-red-200">Home</div>
-      <div class="font-semibold normal-case text-sm p-2 px-4 cursor-pointer 0bg-red-200">Products</div>
-      <div class="font-semibold normal-case text-sm p-2 px-4 cursor-pointer 0bg-red-200 whitespace-nowrap">About Us</div>
-      <div class="font-semibold normal-case text-sm p-2 px-4 cursor-pointer 0bg-red-200">Contact Us</div>
-    </div>
-    <div class="flex space-x-1 0bg-green-200">
-      <!-- Shop Cart -->
-      <div class="dropdown dropdown-end">
-        <label tabindex="0" class="btn btn-ghost btn-circle">
-          <div class="indicator">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            <span class="badge badge-sm indicator-item">0</span>
+<body class="backdrop-blur-sm">
+  <div class="bg-gradient-to-bl from-[#f35c80] via-[#f87997] text-white to-[#ffd2dd] min-h-screen overflow-hidden">
+    <header class="bg-base-500 pt-2 0bg-slate-400 sticky top-0">
+      <div class="container px-7 mx-auto max-h-full flex justify-between text-white items-center">
+        <div class="flex 0bg-red-200 p-2 px-3">
+          <a class="font-bold normal-case text-xl whitespace-nowrap">Ilra CakeArt</a>
+        </div>
+        <nav class="md:flex space-x-3 0bg-blue-200 hidden">
+          <div class="font-semibold normal-case text-sm p-2 px-4 cursor-pointer 0bg-red-200">Home</div>
+          <div class="font-semibold normal-case text-sm p-2 px-4 cursor-pointer 0bg-red-200 whitespace-nowrap">About Us
           </div>
-        </label>
-        <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
-          <div class="card-body">
-            <span class="font-bold text-lg">0 Items</span>
-            <span class="text-info">Subtotal: $0</span>
-            <div class="card-actions">
-              <button class="btn btn-primary btn-block">View cart</button>
+          <div class="font-semibold normal-case text-sm p-2 px-4 cursor-pointer 0bg-red-200">Products</div>
+          <div class="font-semibold normal-case text-sm p-2 px-4 cursor-pointer 0bg-red-200">Contact Us</div>
+        </nav>
+        <div class="flex space-x-1 0bg-green-200">
+          <!-- Shop Cart -->
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+              <div class="indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span
+                  class="badge badge-sm text-xs bg-transparent border-white -top-[2px] text-white indicator-item">9</span>
+              </div>
+            </label>
+            <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+              <div class="card-body">
+                <span class="font-bold text-lg">0 Items</span>
+                <span class="text-info">Subtotal: $0</span>
+                <div class="card-actions">
+                  <button class="btn btn-primary btn-block">View cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float-right py-2 cursor-pointer md:hidden" id="dd-navbar-toggle">
+            <div class="border-white border-s-[1px] ps-2">
+              <div class="z-50 relative">
+                <i class="fa-solid fa-bars fa-beat-fade hamburger-icon z-50"></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="float-right py-2 cursor-pointer md:hidden" id="dd-navbar-toggle">
-        <div class="border-slate-600 border-s-[1px] ps-2">
-          <i class="fa-solid fa-bars fa-beat-fade"></i>
+      <!-- Mobile Navigtion -->
+      <nav
+        class="mobile-menu backdrop-blur-sm bg-black/80 max-h-screen h-screen hidden md:hidden absolute inset-0 z-[49]"
+        id="mobile-menu">
+        <div class="h-full grid place-items-center py-20">
+
+          <div class="font-semibold normal-case text-sm cursor-pointer">Home</div>
+          <div class="font-semibold normal-case text-sm cursor-pointer">About Us</div>
+          <div class="font-semibold normal-case text-sm cursor-pointer">Products</div>
+          <div class="font-semibold normal-case text-sm cursor-pointer">Contact Us</div>
         </div>
-      </div>
-    </div>
-  </nav>
-  <div class="mobile-menu text-center hidden md:hidden" id="mobile-menu">
-    <div class="font-semibold normal-case text-sm p-3 px-4 cursor-pointer">Home</div>
-    <div class="font-semibold normal-case text-sm p-3 px-4 cursor-pointer">Products</div>
-    <div class="font-semibold normal-case text-sm p-3 px-4 cursor-pointer">About Us</div>
-    <div class="font-semibold normal-case text-sm p-3 px-4 cursor-pointer">Contact Us</div>
+      </nav>
+    </header>
+    <main class="">
+      <section class="">
+        <div class="container px-7 mx-auto">
+          <div class="mt-32 grid mx-auto grid-cols-4 justify-center items-start">
+            <div class="justify-center col-span-4 md:col-span-2 flex">
+              <div class="flex flex-col justify-center text-center md:text-left gap-2">
+                <div class="text-xl md:text-4xl font-bold">Ilra CakeArt</div>
+                <div class="text-lg">Penuhi momen <span class="font-semibold">berharga</span>mu dengan <span
+                    class="font-semibold">kue istimewa</span> untuk momen <span class="font-semibold">bahagia</span>
+                  dengan
+                  keluarga.</div>
+                <button class="mt-10 mx-auto md:mx-0 basis-1/4 rounded-full p-2 px-4 border border-white">Cari tau</button>
+              </div>
+            </div>
+            <div class="relative mx-auto  col-span-4 md:col-span-2 max-w-96 max-h-96">
+              <div class="rounded-full absolute inset-0 bg-[#ffd8e2]/20 bg-blend-multiply w-64 h-72"></div>
+              <div class="rounded-full absolute inset-0 -top-11 -left-7 bg-[url('hero-cake1.png')] bg-cover w-80 h-80">
+              </div>
+              <div class="rounded-full absolute inset-0 left-4 top-2 bg-[#f87997]/20 mix-blend-multiply w-64 h-64">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
-
-  <main class="">
-    <section class="h-screen">
-      Ini Section
-    </section>
-  </main>
-
-  <footer class="text-center">
-    <ul class="menu menu-horizontal lg:min-w-max justify-around w-full">
+  <footer class="text-center z-0">
+    <ul class="menu menu-horizontal flex flex-row lg:min-w-max justify-around w-full">
       <li>
         <a>Social Media</a>
         <ul>
           <li><a><i class="fa fa-instagram"></i>Instagram</a></li>
-          <li><a>Whatsapp</a></li>
-          <li><a>Email</a></li>
+          <li><a><i class="fa fa-whatsapp"></i>Whatsapp</a></li>
+          <li><a><i class="fa fa-envelope"></i>Email</a></li>
         </ul>
       </li>
       <li>
-        <a>Enterprise</a>
+        <a>Contact</a>
         <ul>
-          <li><a>CRM software</a></li>
-          <li><a>Marketing management</a></li>
-          <li><a>Security</a></li>
-          <li><a>Consulting</a></li>
+          <li><a>FAQ</a></li>
         </ul>
       </li>
       <li>
         <a>Products</a>
         <ul>
           <li><a>UI Kit</a></li>
-          <li><a>Wordpress themes</a></li>
-          <li><a>Wordpress plugins</a></li>
           <li>
             <a>Open source</a>
             <ul>
               <li><a>Auth management system</a></li>
-              <li><a>VScode theme</a></li>
-              <li><a>Color picker app</a></li>
             </ul>
           </li>
         </ul>
