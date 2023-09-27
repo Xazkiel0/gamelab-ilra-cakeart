@@ -49,7 +49,19 @@ body {
 }
 
 .bg-primary {
-  background: #f53d69;
+  background: #f53d69 !important;
+}
+.bg-secondary {
+  background: #5656be !important;
+}
+.bg-tertiary {
+  background: #fbcf78 !important;
+}
+.bg-green {
+  background: #3dc74b !important;
+}
+.text-base {
+  color: #696984;
 }
 .text-primary {
   color: #f53d69 !important;
@@ -58,10 +70,41 @@ body {
   color: #5656be !important;
 }
 
+/* .flex-row {
+  flex-direction: row;
+} */
+
+.text-title-card {
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.text-body-card {
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.border-radius16 {
+  border-radius: 16px;
+}
+
+.icon-card {
+  left: 50%;
+  top: -72px;
+  transform: translateX(-50%);
+}
 .card-why-body {
   border-radius: 20px;
   background: #fff;
-  box-shadow: 2px 15px 60px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 15px 30px 0.5px rgba(0, 0, 0, 0.25);
+  max-width: 200px;
+  min-height: 250px;
 }
 
 .btn-primary {
