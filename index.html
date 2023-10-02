@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- CDNs -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <script src="https://kit.fontawesome.com/9135933967.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /> -->
+  <!-- <script src="https://kit.fontawesome.com/9135933967.js" crossorigin="anonymous"></script> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -17,30 +17,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
   <!-- Own -->
   <script defer src="script.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="">
+<body x-data="">
   <div class="bg-hero min-vh-100">
     <nav class="py-2 text-white">
-      <div class="container-lg align-content-center d-flex justify-content-between align-items-center">
-        <div class="fw-bolder fs-sm24 text-nowrap">Ilra CakeArt</div>
-        <div class="" id="">
+      <div class="container-lg navigation align-content-center d-flex justify-content-between align-items-center">
+        <a class="fw-bolder fs-sm24 text-nowrap" @click="location.reload('/index.html')">Ilra CakeArt</a>
+        <div class="navbar" id="">
           <div class="d-none d-sm-flex">
-            <div class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
+            <a href="#home" @click="scrollTo('home')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
               Home
-            </div>
-            <div class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
+            </a>
+            <a href="#about" @click="scrollTo('about')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
               About Us
-            </div>
-            <div class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
+            </a>
+            <a href="#products" @click="scrollTo('products')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
               Products
-            </div>
-            <div class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
+            </a>
+            <a href="#contact" @click="scrollTo('contact')"
+              class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
               Contact Us
-            </div>
+            </a>
           </div>
         </div>
         <div class="d-none d-md-block">
@@ -54,7 +56,7 @@
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" id="home">
       <div class="row">
         <div class="col-12 col-md-6 order-md-last">
           <div class="p-4">
@@ -73,7 +75,7 @@
               kue <span class="text-primary">istimewa</span> untuk momen
               <span class="text-primary">bahagia</span> dengan keluarga</span>
             <div class="d-flex justify-content-center justify-content-md-start gap-3">
-              <div class="btn-primary px-3 p-1 mx-auto mx-sm-0">
+              <div class="btn-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
                 Get Started
               </div>
               <div class="d-none d-sm-block d-md-none">
@@ -93,7 +95,7 @@
   <div class="container text-base">
     <div class="row mt-5">
       <div class="about col-12 d-flex">
-        <div class=" fs-sm20 fw-semibold mx-auto">
+        <div id="about" class=" fs-sm20 fw-semibold mx-auto">
           What is
           <span class="text-secondary">Ilra CakeArt?</span>
         </div>
@@ -171,36 +173,64 @@
         </div>
       </div>
     </div>
-    <div class="row mt-5 justify-content-center">
+    <div id="products" class="row mt-5 justify-content-center">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Our
           <span class="text-secondary">Popular Products</span>
         </div>
       </div>
-      <div class="row flex-row gap-2 justify-content-center">
-        <div class="p-2 col border card-product">
-          <img src="romantic-cake.png" width="100%" alt="" srcset="">
-          <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
-            Romantic Cake
+      <div class="">
+        <div class="slider-container position-relative product-swipe mt-5 ">
+          <div id="prev-btn"
+            class="nav-slide p-2 left-0 left-md-n8 position-absolute d-flex justify-content-center align-items-center">
+            <img src="previous-ltr.svg" class="" alt="" srcset="">
           </div>
-        </div>
-        <div class="p-2 col d-none d-sm-block border card-product">
-          <img src="romantic-cake.png" width="100%" alt="" srcset="">
-          <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
-            Romantic Cake
+          <div id="next-btn"
+            class="nav-slide right-0 right-n4s right-md-n8 right-lg-n2 p-2 position-absolute  d-flex justify-content-center align-items-center">
+            <img src="next-ltr.svg" class="" alt="" srcset="">
           </div>
-        </div>
-        <div class="p-2 col d-none d-md-block border card-product">
-          <img src="romantic-cake.png" width="100%" alt="" srcset="">
-          <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
-            Romantic Cake
-          </div>
-        </div>
-        <div class="p-2 col d-none d-lg-block border card-product">
-          <img src="romantic-cake.png" width="100%" alt="" srcset="">
-          <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
-            Romantic Cake
+          <div class="px-3 overflow-hidden">
+            <div
+              class="slider-wrapper d-flex row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 px-1 px-md-2-5 px-lg-3 ms-2 column-gap-2 overflow-scroll">
+              <div class="card-product border slider-slide">
+                <img src="romantic-cake.png" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
+                  alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                  Romantic Cake
+                </div>
+              </div>
+              <div class="card-product border slider-slide">
+                <img src="unicorn-theme-cake.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
+                  height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                  Unicorn Theme Cake
+                </div>
+              </div>
+              <div class="card-product border slider-slide">
+                <img src="romantic-tall-cake.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
+                  height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                  Romantic Cake
+                </div>
+              </div>
+              <div class="card-product border slider-slide">
+                <img src="duck-theme-cake.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
+                  height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                  Romantic Cake
+                </div>
+              </div>
+              <div class="card-product border slider-slide">
+                product 5
+              </div>
+              <div class="card-product border slider-slide">
+                product 6
+              </div>
+              <div class="card-product border slider-slide">
+                product 7
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -212,12 +242,132 @@
           <span class="text-secondary">Cetificate</span>
         </div>
       </div>
-      <div class="row flex-column mt-5 justify-content-center p-3 gap-5">
-        <img class="shadow-base" src="halal-cert.png" alt="" srcset="">
-        <img class="shadow-base" src="halal-cert2.png" alt="" srcset="">
+      <div class="row mt-5 justify-content-center p-3 gap-5">
+        <div class="col-12 col-md-8 col-lg-6">
+          <img class="shadow-base w-100" src="halal-cert.png" alt="" srcset="">
+        </div>
+        <div class="col-12 col-md-8 col-lg-6">
+          <img class="shadow-base w-100" src="halal-cert2.png" alt="" srcset="">
+        </div>
       </div>
     </div>
     <div class="row mt-5 justify-content-center">
+      <div class="why col-12 d-flex flex-column">
+        <div class=" fs-sm20 fw-semibold mx-auto">
+          Customers
+          <span class="text-secondary">Feedback</span>
+        </div>
+        <div class="fs-9 text-center">
+          <span>(From Google Reviews)</span>
+        </div>
+      </div>
+      <div class="row flex-row gap-2 justify-content-center mt-5">
+        <div class="d-flex justify-content-center column-gap-3">
+          <div class="card-feedback p-4">
+            <div class="d-flex flex-row align-items-center">
+              <div class="avatar-user border">
+                <img class="w-100 h-auto" src="risa-anna.png" alt="" srcset="">
+              </div>
+              <div class="name ms-2">
+                <span class="fw-light">Risa Anna</span>
+              </div>
+            </div>
+            <div class="py-1">
+              <div class="stars py-1">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+              </div>
+              <p class="fs-sm12">Thankyou Ilra Cake Art yg sudah membuat birthday adekku jadi spesial sekali. Cake
+                custom designnya keren, kuenya lembut, manisnya pas, BUTTER CREAMnya ngga eneg</spa>
+            </div>
+          </div>
+          <div class="card-feedback p-4">
+            <div class="d-flex flex-row align-items-center">
+              <div class="avatar-user border">
+                <img class="w-100 h-auto" src="tia-saraswati.png" alt="" srcset="">
+              </div>
+              <div class="name ms-2">
+                <span class="fw-light">Tia Saraswati</span>
+              </div>
+            </div>
+            <div class="py-1">
+              <div class="stars py-1">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+              </div>
+              <p class="fs-sm12">Tekstur cakenya yg lembut, nyes, dan nggak terlalu manis..nggak seret di lidah. Lapisan
+                coklat antar cake nya itu juga enak, aku gak tahu mbak arum pake merk apa..tapi rasanya elegan gitu, gak
+                terlalu manis.</spa>
+            </div>
+          </div>
+          <div class="card-feedback p-4">
+            <div class="d-flex flex-row align-items-center">
+              <div class="avatar-user border">
+                <img class="w-100 h-auto" src="oktavia-agustin.png" alt="" srcset="">
+              </div>
+              <div class="name ms-2">
+                <span class="fw-light">Oktavia Agustin</span>
+              </div>
+            </div>
+            <div class="py-1">
+              <div class="stars py-1">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+              </div>
+              <p class="fs-sm12">Syukron jazakillahu khayr Ilra CakeArt 🙏🙏 kuenya cantik,, enak, lembut, manisnya pas,
+                dan creamnya juga gak bikin eneg 🤗🥳 </spa>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center text-base">
+      <div class="col-12 d-flex flex-column">
+        <div class="why fs-sm20 fw-semibold mx-auto">
+          <span class="text-secondary">Frequently Asked Question</span>
+        </div>
+        <div class="d-flex flex-column row-gap-3 mt-5 mx-auto p-3">
+          <div class="faq-row border p-3 d-flex flex-row align-items-center justify-content-between">
+            <div class="d-flex flex-row">
+              <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+              <span class="fs-sm16 fw-lighter">Whats make Ilra CakeArt better than other cake stores?</span>
+            </div>
+            <iconify-icon id="dd-faq" icon="ooui:previous-rtl" style="color: #5656be"></iconify-icon>
+          </div>
+          <div class="faq-row border p-3 d-flex flex-row opacity-50 align-items-center justify-content-between">
+            <div class="d-flex flex-row">
+              <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+              <span class="fs-sm16 fw-lighter">What kind of design do Ilra CakeArt accept?</span>
+            </div>
+            <iconify-icon id="dd-faq" icon="ooui:previous-rtl" style="color: #5656be"></iconify-icon>
+          </div>
+          <div class="faq-row border p-3 d-flex flex-row opacity-50 align-items-center justify-content-between">
+            <div class="d-flex flex-row">
+              <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+              <span class="fs-sm16 fw-lighter">How to order Ilra CakeArt?</span>
+            </div>
+            <iconify-icon id="dd-faq" icon="ooui:previous-rtl" style="color: #5656be"></iconify-icon>
+          </div>
+          <div class="faq-row border p-3 d-flex flex-row opacity-50 align-items-center justify-content-between">
+            <div class="d-flex flex-row">
+              <div class="w-sm24 h-sm24 rounded-circle bg-secondary me-3">_</div>
+              <span class="fs-sm16 fw-lighter">Is Ilra CakeArt expensive?</span>
+            </div>
+            <iconify-icon id="dd-faq" icon="ooui:previous-rtl" style="color: #5656be"></iconify-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center" id="contact">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Contact Us
@@ -243,8 +393,8 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-12 p-5 order-0 order-md-2">
-        <img src="contact-us-img.png" width="100%" alt="" srcset="">
+      <div class="col-md-6 col-12 px-5 d-flex align-items-center justify-content-center order-0 order-md-2">
+        <img src="contact-us-img.png" class="w-100 w-lg-75" alt="" srcset="">
       </div>
     </div>
   </div>
@@ -259,8 +409,8 @@
           <span class="fw-semibold fs-sm12 px-3 text-nowrap">Customize your <br> cake</span>
         </div>
       </div>
-      <div class="row mt-4 row-gap-3">
-        <div class="col-12 footer-content">
+      <div class="row mt-4 row-gap-3 row-gap-md-5">
+        <div class="col-12 col-md col-sm-6 footer-content">
           <span class="fw-semibold fs-sm16">Contact Us</span>
           <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
             <div>
@@ -277,7 +427,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 footer-content">
+        <div class="col-12 col-md col-sm-6 footer-content">
           <span class="fw-semibold fs-sm16">Quick Links</span>
           <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
             <div>
@@ -291,7 +441,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 footer-content">
+        <div class="col-12 col-md footer-content">
           <span class="fw-semibold fs-sm16">Address</span>
           <div class="address">
             <span class="mt-2 fs-11">
@@ -299,7 +449,7 @@
             </span>
           </div>
         </div>
-        <div class="col-12 footer-content">
+        <div class="col-12 col-md footer-content">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.955587627656!2d112.72687687153471!3d-7.35887545613961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e582e840db4d%3A0x6244e6b3dbe90ddf!2sIlra%20CakeArt!5e0!3m2!1sid!2sid!4v1695957851731!5m2!1sid!2sid"
             class="w-100 h-100" style="border:0;" allowfullscreen="" loading="lazy"
@@ -318,6 +468,7 @@
       </div>
     </div>
   </footer>
+  <script></script>
 </body>
 
 </html>

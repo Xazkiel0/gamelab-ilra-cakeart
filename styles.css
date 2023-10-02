@@ -1,8 +1,8 @@
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .mt-md-n12 {
     margin-top: -48px !important;
   }
@@ -24,6 +24,22 @@ body {
   .mt-md-n18 {
     margin-top: -72px !important;
   }
+  .left-md-n4 {
+    left: -16px !important;
+  }
+  .left-md-n8 {
+    left: -32px !important;
+  }
+  .right-md-n4 {
+    right: -16px !important;
+  }
+  .right-md-n8 {
+    right: -32px !important;
+  }
+  .px-md-2-5 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
 }
 
 .cursor-pointer {
@@ -41,6 +57,24 @@ body {
     margin-top: -9rem !important;
     color: red;
   }
+  .w-lg-100 {
+    width: 100% !important;
+  }
+  .w-lg-75 {
+    width: 75% !important;
+  }
+  .w-lg-50 {
+    width: 50% !important;
+  }
+  .w-lg-25 {
+    width: 25% !important;
+  }
+  .right-lg-n12 {
+    right: -48px !important;
+  }
+  .right-lg-n2 {
+    right: -8px !important;
+  }
 }
 
 .bg-hero {
@@ -52,6 +86,13 @@ body {
   );
   /* background-size: ; */
   background-repeat: no-repeat;
+}
+
+.avatar-user {
+  width: 40px;
+  height: auto;
+  padding: 2px;
+  border-radius: 50%;
 }
 
 .bg-primary {
@@ -91,6 +132,21 @@ body {
   line-height: normal;
 }
 
+.navigation a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.faq-row {
+  width: 700px;
+  border-radius: 12px;
+}
+
+.w-xl-400 {
+  width: 400px;
+}
+
 .text-body-card {
   text-align: center;
   font-size: 14px;
@@ -112,8 +168,17 @@ body {
   border-radius: 20px;
   background: #fff;
   box-shadow: 2px 15px 30px 0.5px rgba(0, 0, 0, 0.25);
-  max-width: 200px;
+  max-width: 300px;
   min-height: 250px;
+}
+
+.card-feedback {
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 15px 30px 0.5px rgba(0, 0, 0, 0.25);
+  min-width: 300px;
+  min-height: 200px;
+  display: inline-block;
 }
 
 .shadow-base {
@@ -142,11 +207,58 @@ body {
   flex-shrink: 0;
 }
 
+.slider-wrapper {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-wrapper .card-product {
+  scroll-snap-align: start;
+}
+
+.slider-wrapper.dragging {
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.slider-wrapper.dragging .card-product {
+  user-select: none;
+  cursor: grab;
+}
+
+.ms-n2 {
+  margin-left: -0.5rem !important;
+}
+
+.nav-slide {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #5656be;
+}
+
+.slider-container #prev-btn {
+  /* left: -32px; */
+  top: 50%;
+  transform: translateY(-50%);
+}
+.slider-container #next-btn {
+  /* right: -32px; */
+  top: 50%;
+  transform: translateY(-50%);
+}
 .card-product {
-  min-width: 220px;
-  max-width: 240px;
+  /* max-width: 240px; */
   min-height: 350px;
   border-radius: 15px;
+}
+.product-wrapper {
+  white-space: nowrap;
 }
 
 .message-chatbox {
@@ -161,318 +273,332 @@ body {
   width: 24px;
   height: 24px;
 }
+
+.left-0 {
+  left: 0px !important;
+}
+.left-n4 {
+  left: -16px !important;
+}
+.right-0 {
+  right: 0px;
+}
+.right-n4 {
+  right: -16px !important;
+}
+
 .mt-n1 {
-  margin-top: -4px;
+  margin-top: -4px !important;
 }
 .mt-n2 {
-  margin-top: -8px;
+  margin-top: -8px !important;
 }
 .mt-n3 {
-  margin-top: -12px;
+  margin-top: -12px !important;
 }
 .mt-n4 {
-  margin-top: -16px;
+  margin-top: -16px !important;
 }
 .mt-n12 {
-  margin-top: -48px;
+  margin-top: -48px !important;
 }
 
 /* class fs-4 to 12 step 1 */
 .fs-4 {
-  font-size: 4px;
+  font-size: 4px !important;
 }
 .fs-5 {
-  font-size: 5px;
+  font-size: 5px !important;
 }
 .fs-6 {
-  font-size: 6px;
+  font-size: 6px !important;
 }
 .fs-7 {
-  font-size: 7px;
+  font-size: 7px !important;
 }
 .fs-8 {
-  font-size: 8px;
+  font-size: 8px !important;
 }
 .fs-9 {
-  font-size: 9px;
+  font-size: 9px !important;
 }
 .fs-10 {
-  font-size: 10px;
+  font-size: 10px !important;
 }
 .fs-11 {
-  font-size: 11px;
+  font-size: 11px !important;
 }
 /* class fs-sm 12-32 */
 .fs-sm12 {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 .fs-sm16 {
-  font-size: 16px;
+  font-size: 16px !important;
 }
 .fs-sm20 {
-  font-size: 20px;
+  font-size: 20px !important;
 }
 .fs-sm22 {
-  font-size: 22px;
+  font-size: 22px !important;
 }
 .fs-sm24 {
-  font-size: 24px;
+  font-size: 24px !important;
 }
 .fs-sm28 {
-  font-size: 28px;
+  font-size: 28px !important;
 }
 .fs-sm32 {
-  font-size: 32px;
+  font-size: 32px !important;
 }
 
 /* class fs-md 36-48 */
 .fs-md36 {
-  font-size: 36px;
+  font-size: 36px !important;
 }
 .fs-md40 {
-  font-size: 40px;
+  font-size: 40px !important;
 }
 .fs-md44 {
-  font-size: 44px;
+  font-size: 44px !important;
 }
 .fs-md48 {
-  font-size: 48px;
+  font-size: 48px !important;
 }
 
 /* class fs-lg 52-96 */
 .fs-lg52 {
-  font-size: 52px;
+  font-size: 52px !important;
 }
 .fs-lg56 {
-  font-size: 56px;
+  font-size: 56px !important;
 }
 .fs-lg60 {
-  font-size: 60px;
+  font-size: 60px !important;
 }
 .fs-lg64 {
-  font-size: 64px;
+  font-size: 64px !important;
 }
 .fs-lg68 {
-  font-size: 68px;
+  font-size: 68px !important;
 }
 .fs-lg72 {
-  font-size: 72px;
+  font-size: 72px !important;
 }
 .fs-lg76 {
-  font-size: 76px;
+  font-size: 76px !important;
 }
 .fs-lg80 {
-  font-size: 80px;
+  font-size: 80px !important;
 }
 .fs-lg84 {
-  font-size: 84px;
+  font-size: 84px !important;
 }
 .fs-lg88 {
-  font-size: 88px;
+  font-size: 88px !important;
 }
 .fs-lg92 {
-  font-size: 92px;
+  font-size: 92px !important;
 }
 .fs-lg96 {
-  font-size: 96px;
+  font-size: 96px !important;
 }
 
 /* make class width also like fs */
 .w-4 {
-  width: 4px;
+  width: 4px !important;
 }
 .w-5 {
-  width: 5px;
+  width: 5px !important;
 }
 .w-6 {
-  width: 6px;
+  width: 6px !important;
 }
 .w-7 {
-  width: 7px;
+  width: 7px !important;
 }
 .w-8 {
-  width: 8px;
+  width: 8px !important;
 }
 .w-9 {
-  width: 9px;
+  width: 9px !important;
 }
 .w-10 {
-  width: 10px;
+  width: 10px !important;
 }
 .w-11 {
-  width: 11px;
+  width: 11px !important;
 }
 /* class w-sm 12-32 */
 .w-sm12 {
-  width: 12px;
+  width: 12px !important;
 }
 .w-sm16 {
-  width: 16px;
+  width: 16px !important;
 }
 .w-sm20 {
-  width: 20px;
+  width: 20px !important;
 }
 .w-sm22 {
-  width: 22px;
+  width: 22px !important;
 }
 .w-sm24 {
-  width: 24px;
+  width: 24px !important;
 }
 .w-sm28 {
-  width: 28px;
+  width: 28px !important;
 }
 .w-sm32 {
-  width: 32px;
+  width: 32px !important;
 }
 
 /* class w-md 36-48 */
 .w-md36 {
-  width: 36px;
+  width: 36px !important;
 }
 .w-md40 {
-  width: 40px;
+  width: 40px !important;
 }
 .w-md44 {
-  width: 44px;
+  width: 44px !important;
 }
 .w-md48 {
-  width: 48px;
+  width: 48px !important;
 }
 
 /* class w-lg 52-96 */
 .w-lg52 {
-  width: 52px;
+  width: 52px !important;
 }
 .w-lg56 {
-  width: 56px;
+  width: 56px !important;
 }
 .w-lg60 {
-  width: 60px;
+  width: 60px !important;
 }
 .w-lg64 {
-  width: 64px;
+  width: 64px !important;
 }
 .w-lg68 {
-  width: 68px;
+  width: 68px !important;
 }
 .w-lg72 {
-  width: 72px;
+  width: 72px !important;
 }
 .w-lg76 {
-  width: 76px;
+  width: 76px !important;
 }
 .w-lg80 {
-  width: 80px;
+  width: 80px !important;
 }
 .w-lg84 {
-  width: 84px;
+  width: 84px !important;
 }
 .w-lg88 {
-  width: 88px;
+  width: 88px !important;
 }
 .w-lg92 {
-  width: 92px;
+  width: 92px !important;
 }
 .w-lg96 {
-  width: 96px;
+  width: 96px !important;
 }
 
 /* class height also like fs */
 .h-4 {
-  width: 4px;
+  width: 4px !important;
 }
 .h-5 {
-  width: 5px;
+  width: 5px !important;
 }
 .h-6 {
-  width: 6px;
+  width: 6px !important;
 }
 .h-7 {
-  width: 7px;
+  width: 7px !important;
 }
 .h-8 {
-  width: 8px;
+  width: 8px !important;
 }
 .h-9 {
-  width: 9px;
+  width: 9px !important;
 }
 .h-10 {
-  width: 10px;
+  width: 10px !important;
 }
 .h-11 {
-  width: 11px;
+  width: 11px !important;
 }
 /* class h-sm 12-32 */
 .h-sm12 {
-  width: 12px;
+  width: 12px !important;
 }
 .h-sm16 {
-  width: 16px;
+  width: 16px !important;
 }
 .h-sm20 {
-  width: 20px;
+  width: 20px !important;
 }
 .h-sm22 {
-  width: 22px;
+  width: 22px !important;
 }
 .h-sm24 {
-  width: 24px;
+  width: 24px !important;
 }
 .h-sm28 {
-  width: 28px;
+  width: 28px !important;
 }
 .h-sm32 {
-  width: 32px;
+  width: 32px !important;
 }
 
 /* class h-md 36-48 */
 .h-md36 {
-  width: 36px;
+  width: 36px !important;
 }
 .h-md40 {
-  width: 40px;
+  width: 40px !important;
 }
 .h-md44 {
-  width: 44px;
+  width: 44px !important;
 }
 .h-md48 {
-  width: 48px;
+  width: 48px !important;
 }
 
 /* class h-lg 52-96 */
 .h-lg52 {
-  width: 52px;
+  width: 52px !important;
 }
 .h-lg56 {
-  width: 56px;
+  width: 56px !important;
 }
 .h-lg60 {
-  width: 60px;
+  width: 60px !important;
 }
 .h-lg64 {
-  width: 64px;
+  width: 64px !important;
 }
 .h-lg68 {
-  width: 68px;
+  width: 68px !important;
 }
 .h-lg72 {
-  width: 72px;
+  width: 72px !important;
 }
 .h-lg76 {
-  width: 76px;
+  width: 76px !important;
 }
 .h-lg80 {
-  width: 80px;
+  width: 80px !important;
 }
 .h-lg84 {
-  width: 84px;
+  width: 84px !important;
 }
 .h-lg88 {
-  width: 88px;
+  width: 88px !important;
 }
 .h-lg92 {
-  width: 92px;
+  width: 92px !important;
 }
 .h-lg96 {
-  width: 96px;
+  width: 96px !important;
 }
