@@ -128,7 +128,7 @@
           <div class="d-flex flex-column gap-4 position-relative">
             <div class="position-absolute icon-card">
               <div class="bg-secondary p-3 border-radius16">
-                <img src="wand.svg" alt="" width="32">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/wand.svg" alt="" width="32">
               </div>
             </div>
             <span class="text-title-card">Customizable Design</span>
@@ -139,7 +139,7 @@
           <div class="d-flex flex-column gap-4 position-relative">
             <div class="position-absolute icon-card">
               <div class="bg-tertiary p-3 border-radius16">
-                <img src="money.svg" alt="" width="32">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/money.svg" alt="" width="32">
               </div>
             </div>
             <span class="text-title-card">Affordable Cake</span>
@@ -151,7 +151,7 @@
           <div class="d-flex flex-column gap-4 position-relative">
             <div class="position-absolute icon-card">
               <div class="bg-primary p-3 border-radius16">
-                <img src="leaf.svg" alt="" width="32">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/leaf.svg" alt="" width="32">
               </div>
             </div>
             <span class="text-title-card">Healthy Cake</span>
@@ -163,7 +163,7 @@
           <div class="d-flex flex-column gap-4 position-relative">
             <div class="position-absolute icon-card">
               <div class="bg-green p-3 border-radius16">
-                <img src="halal.svg" alt="" width="32">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/halal.svg" alt="" width="32">
               </div>
             </div>
             <span class="text-title-card">Halal Cake</span>
@@ -184,11 +184,11 @@
         <div class="slider-container position-relative product-swipe mt-5 ">
           <div id="prev-btn"
             class="nav-slide p-2 left-0 left-md-n8 position-absolute d-flex justify-content-center align-items-center">
-            <img src="previous-ltr.svg" class="" alt="" srcset="">
+            <iconify-icon icon="ooui:previous-ltr" style="color: white;"></iconify-icon>
           </div>
           <div id="next-btn"
             class="nav-slide right-0 right-n4s right-md-n8 right-lg-n2 p-2 position-absolute  d-flex justify-content-center align-items-center">
-            <img src="next-ltr.svg" class="" alt="" srcset="">
+            <iconify-icon icon="ooui:previous-rtl" style="color: white;"></iconify-icon>
           </div>
           <div class="px-3 overflow-hidden">
             <div
@@ -336,33 +336,73 @@
           <span class="text-secondary">Frequently Asked Question</span>
         </div>
         <div class="d-flex flex-column row-gap-3 mt-5 mx-auto p-3">
-          <div class="faq-row border p-3 d-flex flex-row align-items-center justify-content-between">
-            <div class="d-flex flex-row">
-              <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
-              <span class="fs-sm16 fw-lighter">Whats make Ilra CakeArt better than other cake stores?</span>
+          <div class="faq-row border p-3" x-data="{open:true}">
+            <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+              <div class="d-flex flex-row">
+                <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                <span class="fs-sm16 fw-lighter">Whats make Ilra CakeArt better than other cake stores?</span>
+              </div>
+              <iconify-icon x-bind:style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                style="color: #5656be"></iconify-icon>
             </div>
-            <iconify-icon id="dd-faq" icon="ooui:previous-rtl" style="color: #5656be"></iconify-icon>
+            <div class="faq-answer mt-3" x-show="open">
+              <p class="fs-sm12 fw-lighter">
+                Ilra CakeArt is a cake store that specializes to create an amazing
+                custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
+                delicious cakes and our cakes are made to order.
+              </p>
+            </div>
           </div>
-          <div class="faq-row border p-3 d-flex flex-row opacity-50 align-items-center justify-content-between">
-            <div class="d-flex flex-row">
-              <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
-              <span class="fs-sm16 fw-lighter">What kind of design do Ilra CakeArt accept?</span>
+          <div class="faq-row border p-3" x-data="{open:false}">
+            <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+              <div class="d-flex flex-row">
+                <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                <span class="fs-sm16 fw-lighter">What kind of design do Ilra CakeArt accept?</span>
+              </div>
+              <iconify-icon x-bind:style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                style="color: #5656be"></iconify-icon>
             </div>
-            <iconify-icon id="dd-faq" icon="ooui:previous-rtl" style="color: #5656be"></iconify-icon>
+            <div class="faq-answer mt-3" x-show="open">
+              <p class="fs-sm12 fw-lighter">
+                Ilra CakeArt is a cake store that specializes to create an amazing
+                custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
+                delicious cakes and our cakes are made to order.
+              </p>
+            </div>
           </div>
-          <div class="faq-row border p-3 d-flex flex-row opacity-50 align-items-center justify-content-between">
-            <div class="d-flex flex-row">
-              <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
-              <span class="fs-sm16 fw-lighter">How to order Ilra CakeArt?</span>
+          <div class="faq-row border p-3" x-data="{open:false}">
+            <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+              <div class="d-flex flex-row">
+                <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                <span class="fs-sm16 fw-lighter">How to order Ilra CakeArt?</span>
+              </div>
+              <iconify-icon x-bind:style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                style="color: #5656be"></iconify-icon>
             </div>
-            <iconify-icon id="dd-faq" icon="ooui:previous-rtl" style="color: #5656be"></iconify-icon>
+            <div class="faq-answer mt-3" x-show="open">
+              <p class="fs-sm12 fw-lighter">
+                Ilra CakeArt is a cake store that specializes to create an amazing
+                custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
+                delicious cakes and our cakes are made to order.
+              </p>
+            </div>
           </div>
-          <div class="faq-row border p-3 d-flex flex-row opacity-50 align-items-center justify-content-between">
-            <div class="d-flex flex-row">
-              <div class="w-sm24 h-sm24 rounded-circle bg-secondary me-3">_</div>
-              <span class="fs-sm16 fw-lighter">Is Ilra CakeArt expensive?</span>
+          <div class="faq-row border p-3" x-data="{open:false}">
+            <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+              <div class="d-flex flex-row">
+                <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                <span class="fs-sm16 fw-lighter">Is Ilra CakeArt expensive?</span>
+              </div>
+              <iconify-icon x-bind:style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                style="color: #5656be"></iconify-icon>
             </div>
-            <iconify-icon id="dd-faq" icon="ooui:previous-rtl" style="color: #5656be"></iconify-icon>
+            <div class="faq-answer mt-3" x-show="open">
+              <p class="fs-sm12 fw-lighter">
+                Ilra CakeArt is a cake store that specializes to create an amazing
+                custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
+                delicious cakes and our cakes are made to order.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -413,16 +453,16 @@
         <div class="col-12 col-md col-sm-6 footer-content">
           <span class="fw-semibold fs-sm16">Contact Us</span>
           <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
-            <div>
-              <img src="whatsapp.svg" alt="" width="24" srcset="">
+            <div class="d-flex align-items-center gap-2">
+              <iconify-icon icon="ic:baseline-whatsapp" style="color: white;" width="24"></iconify-icon>
               <span class="fw-semibold fs-sm12">WhatsApp</span>
             </div>
-            <div>
-              <img src="instagram.svg" alt="" width="24" srcset="">
+            <div class="d-flex align-items-center gap-2">
+              <iconify-icon icon="mdi:instagram" style="color: white;" width="24"></iconify-icon>
               <span class="fw-semibold fs-sm12">Instagram</span>
             </div>
-            <div>
-              <img src="email.svg" alt="" width="24" srcset="">
+            <div class="d-flex align-items-center gap-2">
+              <iconify-icon icon="eva:email-outline" style="color: white;" width="24"></iconify-icon>
               <span class="fw-semibold fs-sm12">Email</span>
             </div>
           </div>
@@ -457,7 +497,8 @@
         </div>
       </div>
       <div class="row mt-4">
-        <div class="copyright fs-9 text-center d-flex flex-column flex-md-row justify-content-center">
+        <div
+          class="border-top border-base pt-3 copyright fs-9 text-center d-flex flex-column flex-md-row justify-content-center">
           <span class="">© 2023 Reserved by Muhammad Sayidul Ikhsan Ulya
           </span>
           <span class="border-start mx-1"></span>

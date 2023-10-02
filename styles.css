@@ -206,7 +206,9 @@ body {
   background: #f53d69;
   flex-shrink: 0;
 }
-
+.slider-container .off {
+  opacity: 0.5;
+}
 .slider-wrapper {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;

@@ -5,12 +5,27 @@ const cardProductWidth = sliderWrapper.querySelector('.card-product').offsetWidt
 
 let isDragging = false, startX, startScrollLeft;
 
+function productSlideBtnOff(scrollLeft) {
+  if (scrollLeft <= 5) {
+    document.getElementById('prev-btn').classList.add('off');
+  } else {
+    document.getElementById('prev-btn').classList.remove('off');
+  }
+  if (scrollLeft >= sliderWrapper.scrollWidth - sliderWrapper.offsetWidth - 5) {
+    document.getElementById('next-btn').classList.add('off');
+  }
+  else {
+    document.getElementById('next-btn').classList.remove('off');
+  }
+}
+productSlideBtnOff(sliderWrapper.scrollLeft);
 
 navSlide.forEach((navBtn) => {
-  console.log(navBtn);
+
   navBtn.addEventListener('click', () => {
-    console.log(navBtn.id);
+    if (navBtn.classList.contains('off')) return;
     sliderWrapper.scrollLeft += navBtn.id === 'next-btn' ? cardProductWidth : -cardProductWidth;
+    productSlideBtnOff(sliderWrapper.scrollLeft);
   })
 })
 
@@ -19,13 +34,12 @@ const dragStart = e => {
   sliderWrapper.classList.add('dragging');
   startX = e.pageX;
   startScrollLeft = sliderWrapper.scrollLeft;
-  console.log(startX, startScrollLeft);
 }
 
 const dragEnd = (e) => {
   isDragging = false;
   sliderWrapper.classList.remove('dragging');
-
+  productSlideBtnOff(sliderWrapper.scrollLeft);
 }
 
 const dragging = e => {
