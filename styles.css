@@ -139,7 +139,8 @@ body {
 }
 
 .faq-row {
-  width: 700px;
+  max-width: 700px;
+
   border-radius: 12px;
 }
 
