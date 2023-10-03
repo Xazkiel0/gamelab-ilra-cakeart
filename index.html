@@ -18,6 +18,9 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
   <!-- Own -->
   <script defer src="script.js"></script>
   <link rel="stylesheet" href="styles.css" />
@@ -25,38 +28,41 @@
 
 <body x-data="">
   <div class="bg-hero min-vh-100">
-    <nav class="py-2 text-white">
-      <div class="container-lg navigation align-content-center d-flex justify-content-between align-items-center">
-        <a class="fw-bolder fs-sm24 text-nowrap" @click="location.reload('/index.html')">Ilra CakeArt</a>
-        <div class="navbar" id="">
-          <div class="d-none d-sm-flex">
-            <a href="#home" @click="scrollTo('home')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
-              Home
-            </a>
-            <a href="#about" @click="scrollTo('about')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
-              About Us
-            </a>
-            <a href="#products" @click="scrollTo('products')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
-              Products
-            </a>
-            <a href="#contact" @click="scrollTo('contact')"
-              class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
-              Contact Us
-            </a>
+    <div class="position-relative">
+      <nav class="py-2 text-white fixed-top z-3" id="navbar">
+        <div class="container-lg navigation align-content-center d-flex justify-content-between align-items-center">
+          <a class="fw-bolder fs-sm24 text-nowrap" @click="location.reload('/index.html')">Ilra CakeArt</a>
+          <div class="navbar" id="">
+            <div class="d-none d-sm-flex">
+              <a href="#home" @click="scrollTo('home')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
+                Home
+              </a>
+              <a href="#about" @click="scrollTo('about')"
+                class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
+                About Us
+              </a>
+              <a href="#products" @click="scrollTo('products')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
+                Products
+              </a>
+              <a href="#contact" @click="scrollTo('contact')"
+                class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
+                Contact Us
+              </a>
+            </div>
+          </div>
+          <div class="d-none d-md-block">
+            <div class="btn-primary d-flex p-1 px-2 gap-1">
+              <iconify-icon width="24" icon="ic:baseline-whatsapp" style="color: white"></iconify-icon>
+              <span class="fs-sm16 text-center fw-bolder"> Order Now </span>
+            </div>
+          </div>
+          <div class="more d-block d-sm-none px-2 p-1">
+            <iconify-icon icon="ci:hamburger-md" width="28" height="28"></iconify-icon>
           </div>
         </div>
-        <div class="d-none d-md-block">
-          <div class="btn-primary d-flex p-1 px-2 gap-1">
-            <iconify-icon width="24" icon="ic:baseline-whatsapp" style="color: white"></iconify-icon>
-            <span class="fs-sm16 text-center fw-bolder"> Order Now </span>
-          </div>
-        </div>
-        <div class="more d-block d-sm-none px-2 p-1">
-          <iconify-icon icon="ci:hamburger-md" width="28" height="28"></iconify-icon>
-        </div>
-      </div>
-    </nav>
-    <div class="container" id="home">
+      </nav>
+    </div>
+    <div class="container pt-5" id="home">
       <div class="row">
         <div class="col-12 col-md-6 order-md-last">
           <div class="p-4">
@@ -91,18 +97,19 @@
         </div>
       </div>
     </div>
+    <div id="endOfHero"></div>
   </div>
-  <div class="container text-base">
+  <div class="main container text-base">
     <!-- About -->
     <div class="row mt-5">
-      <div class="about col-12 d-flex">
+      <div class="about col-12 d-flex" data-aos="fade-up">
         <div id="about" class=" fs-sm20 fw-semibold mx-auto">
           What is
           <span class="text-secondary">Ilra CakeArt?</span>
         </div>
       </div>
       <div class="about-text col-12 mt-3">
-        <div class="col-12 px-2">
+        <div class="col-12 px-2" data-aos="fade-up">
           <p class="text-center text-body">Ilra CakeArt is a cake store that specializes to create an amazing custom art
             of cakes.
             We use only the
@@ -110,7 +117,7 @@
             order.
           </p>
         </div>
-        <div class="col-12 mt-4 px-5">
+        <div class="col-12 mt-4 px-5" data-aos="fade-up">
           <p class="text-center text-body">We are helping people to make memorable and precious moment on their
             important event
             and we are commited to providing our customers with the best experience.</p>
@@ -126,7 +133,7 @@
         </div>
       </div>
       <div class="row cards mt-5 justify-content-center gap-5">
-        <div class="card-why-body p-4 pt-5">
+        <div class="card-why-body p-4 pt-5" data-aos="fade-left" data-aos-duration="500">
           <div class="d-flex flex-column gap-4 position-relative">
             <div class="position-absolute icon-card">
               <div class="bg-secondary p-3 border-radius16">
@@ -137,7 +144,7 @@
             <span class="text-body-card px-1">Create your own custom cake with ease and freedom!</span>
           </div>
         </div>
-        <div class="card-why-body p-4 pt-5">
+        <div class="card-why-body p-4 pt-5" data-aos="fade-left" data-aos-duration="900">
           <div class="d-flex flex-column gap-4 position-relative">
             <div class="position-absolute icon-card">
               <div class="bg-tertiary p-3 border-radius16">
@@ -149,7 +156,7 @@
               of large stores.</span>
           </div>
         </div>
-        <div class="card-why-body p-4 pt-5">
+        <div class="card-why-body p-4 pt-5" data-aos="fade-left" data-aos-duration="1300">
           <div class="d-flex flex-column gap-4 position-relative">
             <div class="position-absolute icon-card">
               <div class="bg-primary p-3 border-radius16">
@@ -161,7 +168,7 @@
               preservatives!</span>
           </div>
         </div>
-        <div class="card-why-body p-4 pt-5">
+        <div class="card-why-body p-4 pt-5" data-aos="fade-left" data-aos-duration="1500">
           <div class="d-flex flex-column gap-4 position-relative">
             <div class="position-absolute icon-card">
               <div class="bg-green p-3 border-radius16">
@@ -265,7 +272,7 @@
       </div>
       <div class="row flex-row gap-2 justify-content-center mt-5">
         <div class="row justify-content-center gap-3">
-          <div class="card-feedback col-12 p-4">
+          <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="500">
             <div class="d-flex flex-row align-items-center">
               <div class="avatar-user border">
                 <img class="w-100 h-auto" src="risa-anna.png" alt="" srcset="">
@@ -286,7 +293,7 @@
                 custom designnya keren, kuenya lembut, manisnya pas, BUTTER CREAMnya ngga eneg</spa>
             </div>
           </div>
-          <div class="card-feedback col-12 p-4">
+          <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="800">
             <div class="d-flex flex-row align-items-center">
               <div class="avatar-user border">
                 <img class="w-100 h-auto" src="tia-saraswati.png" alt="" srcset="">
@@ -308,7 +315,7 @@
                 terlalu manis.</spa>
             </div>
           </div>
-          <div class="card-feedback col-12 p-4">
+          <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="1100">
             <div class="d-flex flex-row align-items-center">
               <div class="avatar-user border">
                 <img class="w-100 h-auto" src="oktavia-agustin.png" alt="" srcset="">
@@ -339,7 +346,7 @@
           <span class="text-secondary">Frequently Asked Question</span>
         </div>
         <div class="d-flex flex-column row-gap-3 mt-5 p-3 mx-auto">
-          <div class="faq-row border p-3" x-data="{open:true}">
+          <div class="faq-row border p-3" x-data="{open:true}" data-aos="fade-left" data-aos-duration="500">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
@@ -358,7 +365,7 @@
               </p>
             </div>
           </div>
-          <div class="faq-row border p-3" x-data="{open:false}">
+          <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="800">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
@@ -377,7 +384,7 @@
               </p>
             </div>
           </div>
-          <div class="faq-row border p-3" x-data="{open:false}">
+          <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1100">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
@@ -396,7 +403,7 @@
               </p>
             </div>
           </div>
-          <div class="faq-row border p-3" x-data="{open:false}">
+          <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
@@ -521,7 +528,10 @@
       </div>
     </div>
   </footer>
-  <script></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
