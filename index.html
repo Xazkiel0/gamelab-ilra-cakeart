@@ -93,6 +93,7 @@
     </div>
   </div>
   <div class="container text-base">
+    <!-- About -->
     <div class="row mt-5">
       <div class="about col-12 d-flex">
         <div id="about" class=" fs-sm20 fw-semibold mx-auto">
@@ -116,6 +117,7 @@
         </div>
       </div>
     </div>
+    <!-- Why Choose US -->
     <div class="row mt-5 justify-content-center">
       <div class="why col-12 d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
@@ -173,6 +175,7 @@
         </div>
       </div>
     </div>
+    <!-- Products -->
     <div id="products" class="row mt-5 justify-content-center">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
@@ -181,60 +184,58 @@
         </div>
       </div>
       <div class="">
-        <div class="slider-container position-relative product-swipe mt-5 ">
-          <div id="prev-btn"
-            class="nav-slide p-2 left-0 left-md-n8 position-absolute d-flex justify-content-center align-items-center">
-            <iconify-icon icon="ooui:previous-ltr" style="color: white;"></iconify-icon>
-          </div>
-          <div id="next-btn"
-            class="nav-slide right-0 right-n4s right-md-n8 right-lg-n2 p-2 position-absolute  d-flex justify-content-center align-items-center">
-            <iconify-icon icon="ooui:previous-rtl" style="color: white;"></iconify-icon>
-          </div>
-          <div class="px-3 overflow-hidden">
-            <div
-              class="slider-wrapper d-flex row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 px-1 px-md-2-5 px-lg-3 ms-2 column-gap-2 overflow-scroll">
-              <div class="card-product border slider-slide">
-                <img src="romantic-cake.png" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                  alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
-                  Romantic Cake
+        <div class="slider-container mt-5 ">
+          <div class="row mt-5">
+            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                  type="button" role="tab" aria-controls="pills-home" aria-selected="true">Popular</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                  type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                  type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="products-wrapper row row-cols-1 row-cols-sm-2 gap-2">
+                  <div class="card-product col border">
+                    <img src="romantic-cake.png" class="object-fit-cover rounded-top-3 w-100" draggable="false"
+                      height="240" alt="" srcset="">
+                    <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                      Romantic Cake
+                    </div>
+                  </div>
+                  <div class="card-product col border">
+                    <img src="romantic-cake.png" class="object-fit-cover rounded-top-3 w-100" draggable="false"
+                      height="240" alt="" srcset="">
+                    <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                      Romantic Cake
+                    </div>
+                  </div>
+                  <div class="card-product col border">
+                    <img src="romantic-cake.png" class="object-fit-cover rounded-top-3 w-100" draggable="false"
+                      height="240" alt="" srcset="">
+                    <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                      Romantic Cake
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="card-product border slider-slide">
-                <img src="unicorn-theme-cake.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
-                  height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
-                  Unicorn Theme Cake
-                </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...
               </div>
-              <div class="card-product border slider-slide">
-                <img src="romantic-tall-cake.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
-                  height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
-                  Romantic Cake
-                </div>
-              </div>
-              <div class="card-product border slider-slide">
-                <img src="duck-theme-cake.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
-                  height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
-                  Romantic Cake
-                </div>
-              </div>
-              <div class="card-product border slider-slide">
-                product 5
-              </div>
-              <div class="card-product border slider-slide">
-                product 6
-              </div>
-              <div class="card-product border slider-slide">
-                product 7
+              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Certificate -->
     <div class="row mt-5 justify-content-center">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
@@ -242,16 +243,17 @@
           <span class="text-secondary">Cetificate</span>
         </div>
       </div>
-      <div class="row mt-5 justify-content-center p-3 gap-5">
-        <div class="col-12 col-md-8 col-lg-6">
+      <div class="row mt-5 justify-content-center p-3 gap-2">
+        <div class="col-5">
           <img class="shadow-base w-100" src="halal-cert.png" alt="" srcset="">
         </div>
-        <div class="col-12 col-md-8 col-lg-6">
+        <div class="col-5">
           <img class="shadow-base w-100" src="halal-cert2.png" alt="" srcset="">
         </div>
       </div>
     </div>
-    <div class="row mt-5 justify-content-center">
+    <!-- Feedback -->
+    <div id="feedback" class="row mt-5 justify-content-center">
       <div class="why col-12 d-flex flex-column">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Customers
@@ -330,6 +332,7 @@
         </div>
       </div>
     </div>
+    <!-- FAQ -->
     <div class="row mt-5 justify-content-center text-base">
       <div class="col-12 d-flex flex-column justify-content-center">
         <div class="why fs-sm20 fw-semibold mx-auto">
@@ -344,11 +347,11 @@
                 </div>
                 <span class="fs-sm16 fw-lighter">Whats make Ilra CakeArt better than other cake stores?</span>
               </div>
-              <iconify-icon x-bind:style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+              <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
-            <div class="faq-answer mt-3" x-show="open">
-              <p class="fs-sm12 fw-lighter">
+            <div class="faq-answer" :class="!open && 'close-faq'">
+              <p class="fs-sm12 fw-lighter mt-3">
                 Ilra CakeArt is a cake store that specializes to create an amazing
                 custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
                 delicious cakes and our cakes are made to order.
@@ -363,11 +366,11 @@
                 </div>
                 <span class="fs-sm16 fw-lighter">What kind of design do Ilra CakeArt accept?</span>
               </div>
-              <iconify-icon x-bind:style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+              <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
-            <div class="faq-answer mt-3" x-show="open">
-              <p class="fs-sm12 fw-lighter">
+            <div class="faq-answer" :class="!open && 'close-faq'">
+              <p class="fs-sm12 fw-lighter mt-3">
                 Ilra CakeArt is a cake store that specializes to create an amazing
                 custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
                 delicious cakes and our cakes are made to order.
@@ -382,11 +385,11 @@
                 </div>
                 <span class="fs-sm16 fw-lighter">How to order Ilra CakeArt?</span>
               </div>
-              <iconify-icon x-bind:style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+              <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
-            <div class="faq-answer mt-3" x-show="open">
-              <p class="fs-sm12 fw-lighter">
+            <div class="faq-answer" :class="!open && 'close-faq'">
+              <p class="fs-sm12 fw-lighter mt-3">
                 Ilra CakeArt is a cake store that specializes to create an amazing
                 custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
                 delicious cakes and our cakes are made to order.
@@ -401,11 +404,11 @@
                 </div>
                 <span class="fs-sm16 fw-lighter">Is Ilra CakeArt expensive?</span>
               </div>
-              <iconify-icon x-bind:style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+              <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
-            <div class="faq-answer mt-3" x-show="open">
-              <p class="fs-sm12 fw-lighter">
+            <div class="faq-answer" :class="!open && 'close-faq'">
+              <p class="fs-sm12 fw-lighter mt-3">
                 Ilra CakeArt is a cake store that specializes to create an amazing
                 custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
                 delicious cakes and our cakes are made to order.
@@ -415,6 +418,7 @@
         </div>
       </div>
     </div>
+    <!-- Contact Us -->
     <div class="row mt-5 justify-content-center" id="contact">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">

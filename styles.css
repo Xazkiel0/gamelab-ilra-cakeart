@@ -140,7 +140,6 @@ body {
 
 .faq-row {
   max-width: 700px;
-
   border-radius: 12px;
 }
 
@@ -507,6 +506,11 @@ body {
 }
 
 /* class height also like fs */
+.close-faq {
+  overflow-y: hidden !important;
+  margin-top: none !important;
+  height: 0px !important;
+}
 .h-4 {
   width: 4px !important;
 }
