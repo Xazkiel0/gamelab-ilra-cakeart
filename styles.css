@@ -206,7 +206,7 @@ body {
   background: #f53d69;
   flex-shrink: 0;
 }
-.slider-container .off {
+/* .slider-container .off {
   opacity: 0.5;
 }
 .slider-wrapper {
@@ -231,7 +231,7 @@ body {
 .slider-wrapper.dragging .card-product {
   user-select: none;
   cursor: grab;
-}
+} */
 
 .ms-n2 {
   margin-left: -0.5rem !important;
@@ -244,23 +244,21 @@ body {
   background: #5656be;
 }
 
-.slider-container #prev-btn {
-  /* left: -32px; */
+/* .slider-container #prev-btn {
   top: 50%;
   transform: translateY(-50%);
 }
 .slider-container #next-btn {
-  /* right: -32px; */
   top: 50%;
   transform: translateY(-50%);
-}
+} */
 .card-product {
-  /* max-width: 240px; */
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  width: 240px;
+  max-width: 240px;
   min-height: 350px;
   border-radius: 15px;
-}
-.product-wrapper {
-  white-space: nowrap;
 }
 
 .message-chatbox {
