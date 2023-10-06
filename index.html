@@ -26,7 +26,7 @@
 </head>
 
 <body x-data="">
-  <div class="bg-hero min-vh-100">
+  <div class="bg-hero min-vh-100 vw-100">
     <div class="position-relative vw-100">
       <nav class="py-2 text-white fixed-top z-3 vw-100" id="navbar">
         <div class="container-lg navigation align-content-center d-flex justify-content-between align-items-center">
@@ -48,7 +48,8 @@
             </div>
           </div>
           <div class="d-none d-md-block">
-            <div class="btn-primary d-flex p-1 px-2 gap-1 cursor-pointer" @click="sendToWhatsapp('','',true)">
+            <div class="btn-primary d-flex p-1 px-2 gap-1 cursor-pointer user-select-none"
+              @click="sendToWhatsapp('','',true)">
               <iconify-icon width="24" icon="ic:baseline-whatsapp" style="color: white"></iconify-icon>
               <span class="fs-sm16 text-center fw-bolder"> Order Now </span>
             </div>
@@ -62,7 +63,7 @@
       <div class="py-2 text-white fixed-top z-3 vw-100">
         <div>
           <div
-            class="d-sm-none d-flex fixed-bottom bg-primary justify-content-evenly align-items-center fs-sm12 user-select-none">
+            class="vw-100 d-sm-none d-flex fixed-bottom bg-primary justify-content-evenly align-items-center fs-sm12 user-select-none">
             <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('home')">
               <iconify-icon icon="cil:home" style="color: white;" width="20"></iconify-icon>
               <span>Home</span>
@@ -83,7 +84,7 @@
         </div>
       </div>
     </div>
-    <div class="container pt-5" id="home">
+    <div class="container pt-5 user-select-none" id="home">
       <div class="row">
         <div class="col-12 col-md-6 order-md-last">
           <div class="p-4">
@@ -120,7 +121,7 @@
     </div>
     <div id="endOfHero"></div>
   </div>
-  <div class="main container text-base">
+  <div class="main container text-base vw-100">
     <!-- About -->
     <div id="about"></div>
     <div class="row mt-5 justify-content-center" data-aos="zoom-in">
