@@ -22,36 +22,33 @@
 
 
   <!-- Own -->
-  <script defer src="script.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body x-data="">
   <div class="bg-hero min-vh-100">
-    <div class="position-relative">
-      <nav class="py-2 text-white fixed-top z-3" id="navbar">
+    <div class="position-relative vw-100">
+      <nav class="py-2 text-white fixed-top z-3 vw-100" id="navbar">
         <div class="container-lg navigation align-content-center d-flex justify-content-between align-items-center">
           <a class="fw-bolder fs-sm24 text-nowrap" @click="location.reload('/index.html')">Ilra CakeArt</a>
           <div class="navbar" id="">
             <div class="d-none d-sm-flex">
-              <a href="#home" @click="scrollTo('home')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
+              <div @click="scrollTo('home')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
                 Home
-              </a>
-              <a href="#about" @click="scrollTo('about')"
-                class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
+              </div>
+              <div @click="scrollTo('about')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
                 About Us
-              </a>
-              <a href="#products" @click="scrollTo('products')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
+              </div>
+              <div @click="scrollTo('products')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
                 Products
-              </a>
-              <a href="#contact" @click="scrollTo('contact')"
-                class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
+              </div>
+              <div @click="scrollTo('contact')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
                 Contact Us
-              </a>
+              </div>
             </div>
           </div>
           <div class="d-none d-md-block">
-            <div class="btn-primary d-flex p-1 px-2 gap-1">
+            <div class="btn-primary d-flex p-1 px-2 gap-1 cursor-pointer" @click="sendToWhatsapp('','',true)">
               <iconify-icon width="24" icon="ic:baseline-whatsapp" style="color: white"></iconify-icon>
               <span class="fs-sm16 text-center fw-bolder"> Order Now </span>
             </div>
@@ -61,6 +58,29 @@
           </div>
         </div>
       </nav>
+      <!-- Mobile Navbar -->
+      <div class="py-2 text-white fixed-top z-3 vw-100">
+        <div>
+          <div class="d-sm-none d-flex fixed-bottom bg-primary justify-content-evenly align-items-center fs-sm12">
+            <div class="d-flex flex-column align-items-center p-2 gap-1 ">
+              <iconify-icon icon="cil:home" style="color: white;" width="20"></iconify-icon>
+              <span>Home</span>
+            </div>
+            <div class="d-flex flex-column align-items-center p-2 gap-1">
+              <iconify-icon icon="solar:chat-round-like-broken" style="color: white;" width="20"></iconify-icon>
+              <span>About</span>
+            </div>
+            <div class="d-flex flex-column align-items-center p-2 gap-1">
+              <iconify-icon icon="bi:box" style="color: white;" width="20"></iconify-icon>
+              <span>Products</span>
+            </div>
+            <div class="d-flex flex-column align-items-center p-2 gap-1">
+              <iconify-icon icon="grommet-icons:contact-info" style="color: white;" width="20"></iconify-icon>
+              <span>Contact</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="container pt-5" id="home">
       <div class="row">
@@ -74,18 +94,18 @@
         <div class="col-12 col-md-6 h-auto d-flex align-self-center mt-lg-n24 mt-0">
           <div class="p-4 d-flex row row-gap-3 row-gap-md-4 text-white h-100">
             <div class="fs-sm20 fw-semibold">
-              <span class="text-primary">Kue sehat</span> dengan rasa yang
+              Kue sehat dengan rasa yang
               nikmat
             </div>
-            <span class="fs-sm16 fw-semibold">Penuhi momen <span class="text-primary">berharga</span>mu dengan
-              kue <span class="text-primary">istimewa</span> untuk momen
-              <span class="text-primary">bahagia</span> dengan keluarga</span>
+            <span class="fs-sm16 fw-semibold">Penuhi momen berhargamu dengan
+              kue istimewa untuk momen
+              bahagia dengan keluarga</span>
             <div class="d-flex justify-content-center justify-content-md-start gap-3">
               <div class="btn-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
                 Get Started
               </div>
               <div class="d-none d-sm-block d-md-none">
-                <div class="btn-primary d-flex p-1 px-2 row-gap-1">
+                <div class="btn-primary d-flex p-1 px-2 row-gap-1 cursor-pointer" @click="sendToWhatsapp('','',true)">
                   <iconify-icon width="24" icon="ic:baseline-whatsapp" style="color: white"></iconify-icon>
                   <span class="fs-sm16 text-center fw-bolder">
                     Order Now
@@ -101,31 +121,36 @@
   </div>
   <div class="main container text-base">
     <!-- About -->
-    <div class="row mt-5">
+    <div class="row mt-5 justify-content-center" data-aos="zoom-in">
       <div class="about col-12 d-flex" data-aos="fade-up">
         <div id="about" class=" fs-sm20 fw-semibold mx-auto">
           What is
           <span class="text-secondary">Ilra CakeArt?</span>
         </div>
       </div>
-      <div class="about-text col-12 mt-3">
-        <div class="col-12 px-2" data-aos="fade-up">
-          <p class="text-center text-body">Ilra CakeArt is a cake store that specializes to create an amazing custom art
-            of cakes.
-            We use only the
-            highest quality and healthy ingredients to make this beautiful and delicious cakes and our cakes are made to
-            order.
-          </p>
+      <div class="about-text row mt-3">
+        <div class="col-12 col-lg-4">
+          <img class="w-100 h-auto" src="gallery.png" alt="" srcset="">
         </div>
-        <div class="col-12 mt-4 px-5" data-aos="fade-up">
-          <p class="text-center text-body">We are helping people to make memorable and precious moment on their
-            important event
-            and we are commited to providing our customers with the best experience.</p>
+        <div class="col-12 col-lg-8 p-4">
+          <div class="px-2" data-aos="fade-up">
+            <p class="text-center align-text-top text-body">Ilra CakeArt is a cake store that specializes to create an
+              amazing custom
+              art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
+              delicious
+              cakes and our cakes are made to order.
+            </p>
+          </div>
+          <div class="mt-4 px-5" data-aos="fade-up">
+            <p class="text-center align-text-top text-body">We are helping people to make memorable and precious moment
+              on their
+              important event. we are commited to providing our customers with the best experience.</p>
+          </div>
         </div>
       </div>
     </div>
     <!-- Why Choose US -->
-    <div class="row mt-5 justify-content-center">
+    <div class="row mt-5 justify-content-center" data-aos="zoom-in">
       <div class="why col-12 d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Why
@@ -133,166 +158,231 @@
         </div>
       </div>
       <div class="row cards mt-5 justify-content-center gap-5">
-        <div class="card-why-body p-4 pt-5" data-aos="fade-left" data-aos-duration="500">
-          <div class="d-flex flex-column gap-4 position-relative">
-            <div class="position-absolute icon-card">
+        <div class="card-why-body p-4" data-aos="fade-left" data-aos-duration="500">
+          <div class="d-flex flex-column gap-4 card-why-content">
+            <div class="mx-auto icon-card">
               <div class="bg-secondary p-3 border-radius16">
                 <img src="https://gamelab-ilra-cakeart.vercel.app/wand.svg" alt="" width="32">
               </div>
             </div>
             <span class="text-title-card">Customizable Design</span>
-            <span class="text-body-card px-1">Create your own custom cake with ease and freedom!</span>
+            <span class="text-body-card px-1">Pesan tema dan bentuk kue versi anda sendiri dengan bebas!</span>
           </div>
         </div>
-        <div class="card-why-body p-4 pt-5" data-aos="fade-left" data-aos-duration="900">
-          <div class="d-flex flex-column gap-4 position-relative">
-            <div class="position-absolute icon-card">
+        <div class="card-why-body p-4" data-aos="fade-left" data-aos-duration="900">
+          <div class="d-flex flex-column gap-4 card-why-content">
+            <div class="mx-auto icon-card">
               <div class="bg-tertiary p-3 border-radius16">
                 <img src="https://gamelab-ilra-cakeart.vercel.app/money.svg" alt="" width="32">
               </div>
             </div>
             <span class="text-title-card">Affordable Cake</span>
-            <span class="text-body-card px-1">Get high-quality cakes at affordable prices that are equivalent to those
-              of large stores.</span>
+            <span class="text-body-card px-1">Dapatkan kue berkualitas tinggi dengan harga terjangkau.</span>
           </div>
         </div>
-        <div class="card-why-body p-4 pt-5" data-aos="fade-left" data-aos-duration="1300">
-          <div class="d-flex flex-column gap-4 position-relative">
-            <div class="position-absolute icon-card">
+        <div class="card-why-body p-4" data-aos="fade-left" data-aos-duration="1300">
+          <div class="d-flex flex-column gap-4 card-why-content">
+            <div class="mx-auto icon-card">
               <div class="bg-primary p-3 border-radius16">
                 <img src="https://gamelab-ilra-cakeart.vercel.app/leaf.svg" alt="" width="32">
               </div>
             </div>
             <span class="text-title-card">Healthy Cake</span>
-            <span class="text-body-card px-1">Get healthy cakes made with natural ingredients and without
-              preservatives!</span>
+            <span class="text-body-card px-1">Kue yang sehat dibuat dengan bahan-bahan alami dan tanpa
+              pengawet!</span>
           </div>
         </div>
-        <div class="card-why-body p-4 pt-5" data-aos="fade-left" data-aos-duration="1500">
-          <div class="d-flex flex-column gap-4 position-relative">
-            <div class="position-absolute icon-card">
+        <div class="card-why-body p-4" data-aos="fade-left" data-aos-duration="1500">
+          <div class="d-flex flex-column gap-4 card-why-content">
+            <div class="mx-auto icon-card">
               <div class="bg-green p-3 border-radius16">
                 <img src="https://gamelab-ilra-cakeart.vercel.app/halal.svg" alt="" width="32">
               </div>
             </div>
             <span class="text-title-card">Halal Cake</span>
-            <span class="text-body-card px-1">Enjoy our cakes without any concern, because we are already halal
-              certified by the government.</span>
+            <span class="text-body-card px-1">Hindari kekhawatiran dengan kue yang halal dan sudah bersertifikat!</span>
           </div>
         </div>
       </div>
     </div>
     <!-- Products -->
-    <div id="products" class="row mt-5 justify-content-center">
+    <div id="products" class="row mt-5 justify-content-center" data-aos="zoom-in">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Our
           <span class="text-secondary">Products</span>
         </div>
       </div>
-      <div class="row mt-5">
-        <ul class="nav nav-pills mb-3 justify-content-center gap-2" id="pills-tab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link bg-secondary text-white active" id="pills-home-tab" data-bs-toggle="pill"
-              data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-              aria-selected="true">Popular Theme</button>
+      <div class="row mt-5" x-data="{show:[true,false,false]}">
+        <ul class="nav nav-pills mb-3 justify-content-center gap-2" role="tablist">
+          <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="400">
+            <button class="nav-link bg-secondary text-white active" type="button" role="tab"
+              @click="show = [true,false,false]">Popular Cakes</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link bg-secondary text-white" id="pills-profile-tab" data-bs-toggle="pill"
-              data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-              aria-selected="false">Profile</button>
+          <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="700">
+            <button class="nav-link bg-secondary text-white" type="button" role="tab"
+              @click="show = [false,true,false]">Kue Anak</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link bg-secondary text-white" id="pills-contact-tab" data-bs-toggle="pill"
-              data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-              aria-selected="false">Contact</button>
+          <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="1000">
+            <button class="nav-link bg-secondary text-white" type="button" role="tab"
+              @click="show = [false,false,true]">Cheesecake</button>
           </li>
         </ul>
-        <div class="tab-content" id="pills-tabContent">
-          <div class="row tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="tab-content">
+          <div class="row d-flex justify-content-center tab-pane" role="tabpanel" :class="!show[0] && 'd-none h-0'">
             <div
               class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-auto products-wrapper d-flex gap-2 justify-content-center">
-              <div class="card-product col border">
+              <div class="card-product col border" data-aos="fade-left">
                 <img src="all_cakes/39bf661e-bd42-44e7-baed-2cf007b867d1.jpeg"
                   class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
                   Sakura Cake
                 </div>
               </div>
-              <div class="card-product col border">
+              <div class="card-product col border" data-aos="fade-left">
                 <img src="all_cakes/842e12cd-5167-49d6-85b7-90f12a3df6a5.jpeg"
                   class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
                   Jelly Art Cake
                 </div>
               </div>
-              <!-- <div class="card-product col border">
-                <img src="romantic-cake.png" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                  alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
-                  Romantic Cake
-                </div>
-              </div> -->
-              <div class="card-product col border">
+              <div class="card-product col border" data-aos="fade-left">
                 <img src="all_cakes/4.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
                   alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
                   Romantic Cake
                 </div>
               </div>
-              <div class="card-product col border">
+              <div class="card-product col border" data-aos="fade-left">
                 <img src="all_cakes/5.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
                   alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
                   Books Cake
                 </div>
               </div>
-              <div class="card-product col border">
+              <div class="card-product col border" data-aos="fade-left">
                 <img src="all_cakes/6.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
                   alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
                   Car Themed Cake
                 </div>
               </div>
-              <div class="card-product col border">
+              <div class="card-product col border" data-aos="fade-left">
                 <img src="all_cakes/7.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
                   alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
                   Anniversary Cake
                 </div>
               </div>
-              <div class="card-product col border">
+              <div class="card-product col border" data-aos="fade-left">
                 <img src="all_cakes/8.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
                   alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
                   Rustic Cake
                 </div>
               </div>
-              <div class="card-product col border">
+              <div class="card-product col border" data-aos="fade-left">
                 <img src="all_cakes/9.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
                   alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
                   Beach Themed Cake
                 </div>
               </div>
-              <div class="card-product col border">
+              <div class="card-product col border" data-aos="fade-left">
                 <img src="all_cakes/10.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
                   alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center mt-4">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
                   Flower Cake
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...
+          <div class="row d-flex justify-content-center tab-pane" role="tabpanel" :class="!show[1] && 'd-none h-0'">
+            <div
+              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-auto products-wrapper d-flex gap-2 justify-content-center">
+              <div class="card-product col border" data-aos="fade-left">
+                <img src="all_cakes/hello_kitty/Hellokitty4.jpg" class="object-fit-cover rounded-top-3 w-100"
+                  draggable="false" height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
+                  Sakura Cake
+                </div>
+              </div>
+              <div class="card-product col border" data-aos="fade-left">
+                <img src="all_cakes/car/cartheme1.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
+                  height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
+                  Car Themed Cake
+                </div>
+              </div>
+              <div class="card-product col border" data-aos="fade-left">
+                <img src="all_cakes/construct/theme1.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
+                  height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
+                  Construct Themed Cake
+                </div>
+              </div>
+              <div class="card-product col border" data-aos="fade-left">
+                <img src="all_cakes/frock_cake/Frock1.jpg" class="object-fit-cover rounded-top-3 w-100"
+                  draggable="false" height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
+                  Frock Cake
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...
+          <div class="row d-flex justify-content-center tab-pane" role="tabpanel" :class="!show[2] && 'd-none h-0'">
+            <div
+              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-auto products-wrapper d-flex gap-2 justify-content-center">
+              <div class="card-product col border" data-aos="fade-left">
+                <img src="all_cakes/new_york/cheesecake1.jpg" class="object-fit-cover rounded-top-3 w-100"
+                  draggable="false" height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
+                  New York CheeseCake
+                </div>
+              </div>
+              <div class="card-product col border" data-aos="fade-left">
+                <img src="all_cakes/strawberrywhipcream/cheesecake1.jpg" class="object-fit-cover rounded-top-3 w-100"
+                  draggable="false" height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
+                  Strawberry Whipcream CheeseCake
+                </div>
+              </div>
+              <div class="card-product col border" data-aos="fade-left">
+                <img src="all_cakes/basque_burn/cheesecake1.jpg" class="object-fit-cover rounded-top-3 w-100"
+                  draggable="false" height="240" alt="" srcset="">
+                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
+                  Basque Burn CheeseCake
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- We Made -->
+    <div class="row mt-5 justify-content-center" data-aos="zoom-in">
+      <div class="d-flex">
+        <div class=" fs-sm20 fw-semibold mx-auto">
+          What we have made
+        </div>
+      </div>
+      <div class="row mt-5 justify-content-center">
+        <div class="col-12 col-md-3 d-flex flex-column text-center" data-aos="fade-left" data-aos-duration="500">
+          <span class="fs-lg60 fw-bolder text-secondary">2+</span>
+          <span class="fw-bold text-base opacity-75">Years Experience</span>
+        </div>
+        <div class="col-12 col-md-3 d-flex flex-column text-center" data-aos="fade-left" data-aos-duration="800">
+          <span class="fs-lg60 fw-bolder text-tertiary">10+</span>
+          <span class="fw-bold text-base opacity-75">Variance of Cakes</span>
+        </div>
+        <div class="col-12 col-md-3 d-flex flex-column text-center" data-aos="fade-left" data-aos-duration="1100">
+          <span class="fs-lg60 fw-bolder text-primary">100+</span>
+          <span class="fw-bold text-base opacity-75">Customers Order</span>
+        </div>
+      </div>
+    </div>
     <!-- Certificate -->
-    <div class="row mt-5 justify-content-center">
+    <div class="row mt-5 justify-content-center" data-aos="zoom-in">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Our
@@ -300,16 +390,16 @@
         </div>
       </div>
       <div class="row mt-5 justify-content-center p-3 gap-2">
-        <div class="col-5">
+        <div class="col-4">
           <img class="shadow-base w-100" src="halal-cert.png" alt="" srcset="">
         </div>
-        <div class="col-5">
+        <div class="col-4">
           <img class="shadow-base w-100" src="halal-cert2.png" alt="" srcset="">
         </div>
       </div>
     </div>
     <!-- Feedback -->
-    <div id="feedback" class="row mt-5 justify-content-center">
+    <div id="feedback" class="row mt-5 justify-content-center" data-aos="zoom-in">
       <div class="why col-12 d-flex flex-column">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Customers
@@ -339,7 +429,7 @@
                 <img src="star.svg" alt="">
               </div>
               <p class="fs-sm12">Thankyou Ilra Cake Art yg sudah membuat birthday adekku jadi spesial sekali. Cake
-                custom designnya keren, kuenya lembut, manisnya pas, BUTTER CREAMnya ngga eneg</spa>
+                custom designnya keren, kuenya lembut, manisnya pas, BUTTER CREAMnya ngga eneg</p>
             </div>
           </div>
           <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="800">
@@ -359,9 +449,11 @@
                 <img src="star.svg" alt="">
                 <img src="star.svg" alt="">
               </div>
-              <p class="fs-sm12">Tekstur cakenya yg lembut, nyes, dan nggak terlalu manis..nggak seret di lidah. Lapisan
-                coklat antar cake nya itu juga enak, aku gak tahu mbak arum pake merk apa..tapi rasanya elegan gitu, gak
-                terlalu manis.</spa>
+              <p class="fs-sm12">Tekstur cakenya yg lembut, nyes, dan nggak terlalu manis..nggak seret di lidah.
+                Lapisan
+                coklat antar cake nya itu juga enak, aku gak tahu mbak arum pake merk apa..tapi rasanya elegan gitu,
+                gak
+                terlalu manis.</p>
             </div>
           </div>
           <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="1100">
@@ -381,36 +473,37 @@
                 <img src="star.svg" alt="">
                 <img src="star.svg" alt="">
               </div>
-              <p class="fs-sm12">Syukron jazakillahu khayr Ilra CakeArt 🙏🙏 kuenya cantik,, enak, lembut, manisnya pas,
-                dan creamnya juga gak bikin eneg 🤗🥳 </spa>
+              <p class="fs-sm12">Syukron jazakillahu khayr Ilra CakeArt 🙏🙏 kuenya cantik,, enak, lembut, manisnya
+                pas,
+                dan creamnya juga gak bikin eneg 🤗🥳 </p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- FAQ -->
-    <div class="row mt-5 justify-content-center text-base">
+    <div class="row mt-5 justify-content-center text-base" data-aos="zoom-in" x-data="{more:0}">
       <div class="col-12 d-flex flex-column justify-content-center">
         <div class="why fs-sm20 fw-semibold mx-auto">
           <span class="text-secondary">Frequently Asked Question</span>
         </div>
         <div class="d-flex flex-column row-gap-3 mt-5 p-3 mx-auto">
+          <!-- 1-4 -->
           <div class="faq-row border p-3" x-data="{open:true}" data-aos="fade-left" data-aos-duration="500">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
                   <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
                 </div>
-                <span class="fs-sm16 fw-lighter">Whats make Ilra CakeArt better than other cake stores?</span>
+                <span class="fs-sm16 fw-lighter">Apa saja jenis cake yang tersedia di Ilra CakeArt?</span>
               </div>
               <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
             <div class="faq-answer" :class="!open && 'close-faq'">
               <p class="fs-sm12 fw-lighter mt-3">
-                Ilra CakeArt is a cake store that specializes to create an amazing
-                custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
-                delicious cakes and our cakes are made to order.
+                Kami menawarkan berbagai jenis cake: kue ulang tahun, cheesecake, kue buah, kue karakter, dan banyak
+                lagi. Silakan jelajahi katalog produk kami untuk melihat pilihan lengkapnya.
               </p>
             </div>
           </div>
@@ -420,16 +513,15 @@
                 <div class="">
                   <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
                 </div>
-                <span class="fs-sm16 fw-lighter">What kind of design do Ilra CakeArt accept?</span>
+                <span class="fs-sm16 fw-lighter">Apakah Ilra CakeArt menyediakan kue khusus sesuai permintaan?</span>
               </div>
               <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
             <div class="faq-answer" :class="!open && 'close-faq'">
               <p class="fs-sm12 fw-lighter mt-3">
-                Ilra CakeArt is a cake store that specializes to create an amazing
-                custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
-                delicious cakes and our cakes are made to order.
+                Ya, kami menerima pesanan kue khusus sesuai dengan tema dan preferensi Anda. Hubungi kami untuk
+                informasi lebih lanjut tentang pesanan khusus.
               </p>
             </div>
           </div>
@@ -439,43 +531,198 @@
                 <div class="">
                   <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
                 </div>
-                <span class="fs-sm16 fw-lighter">How to order Ilra CakeArt?</span>
+                <span class="fs-sm16 fw-lighter">Apakah kue Ilra CakeArt dapat disesuaikan untuk alergi makanan atau
+                  preferensi diet tertentu?</span>
               </div>
               <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
             <div class="faq-answer" :class="!open && 'close-faq'">
               <p class="fs-sm12 fw-lighter mt-3">
-                Ilra CakeArt is a cake store that specializes to create an amazing
-                custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
-                delicious cakes and our cakes are made to order.
+                Ya, kami dapat menyesuaikan kue untuk alergi makanan atau preferensi diet tertentu. Beri tahu kami
+                tentang kebutuhan Anda saat memesan.
               </p>
             </div>
           </div>
-          <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
+          <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1100">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
                   <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
                 </div>
-                <span class="fs-sm16 fw-lighter">Is Ilra CakeArt expensive?</span>
+                <span class="fs-sm16 fw-lighter">Apakah kue Ilra CakeArt dapat disesuaikan dengan tema pesta?</span>
               </div>
               <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
             <div class="faq-answer" :class="!open && 'close-faq'">
-              <p class="fs-sm12 fw-lighter mt-3">
-                Ilra CakeArt is a cake store that specializes to create an amazing
-                custom art of cakes. We use only the highest quality and healthy ingredients to make this beautiful and
-                delicious cakes and our cakes are made to order.
-              </p>
+              <p class="fs-sm12 fw-lighter mt-3">Tentu saja! Kami dapat menyesuaikan kue ulang tahun Anda dengan tema
+                pesta yang Anda inginkan. Beri tahu kami detailnya, dan kami akan bekerja untuk menciptakan kue yang
+                sempurna sesuai tema Anda.</p>
+            </div>
+          </div>
+          <div class="d-flex flex-row justify-content-center" :class="more != 0?'d-none':''">
+            <div class="cursor-pointer p-2 border-radius16" @click="more++">
+              <span class="text-secondary more">Show More</span>
+            </div>
+          </div>
+          <!-- 4-8 -->
+          <div class="d-flex flex-column row-gap-3" :class="more < 1 ?'d-none':''">
+            <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
+              <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="">
+                    <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                  </div>
+                  <span class="fs-sm16 fw-lighter">Apakah Anda memiliki toko fisik atau hanya berbasis online?</span>
+                </div>
+                <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                  style="color: #5656be"></iconify-icon>
+              </div>
+              <div class="faq-answer" :class="!open && 'close-faq'">
+                <p class="fs-sm12 fw-lighter mt-3">
+                  Saat ini, kami adalah toko kue ulang tahun berbasis online, tetapi Anda dapat menghubungi kami secara
+                  online atau melalui telepon untuk mendapatkan informasi lebih lanjut.
+                </p>
+              </div>
+            </div>
+            <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
+              <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="">
+                    <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                  </div>
+                  <span class="fs-sm16 fw-lighter">Berapa harga rata-rata kue Ilra CakeArt?</span>
+                </div>
+                <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                  style="color: #5656be"></iconify-icon>
+              </div>
+              <div class="faq-answer" :class="!open && 'close-faq'">
+                <p class="fs-sm12 fw-lighter mt-3"> Harga kue ulang tahun kami bervariasi tergantung pada ukuran,
+                  desain,
+                  dan bahan yang digunakan. Anda dapat melihat harga rinci di katalog WA kami.</p>
+              </div>
+            </div>
+            <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
+              <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="">
+                    <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                  </div>
+                  <span class="fs-sm16 fw-lighter">Bagaimana cara memesan kue ulang tahun dari Ilra CakeArt?</span>
+                </div>
+                <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                  style="color: #5656be"></iconify-icon>
+              </div>
+              <div class="faq-answer" :class="!open && 'close-faq'">
+                <p class="fs-sm12 fw-lighter mt-3">Anda dapat memesan kue ulang tahun melalui WA/situs web kami dengan
+                  mengisi formulir pemesanan online atau menghubungi tim layanan pelanggan kami.</p>
+              </div>
+            </div>
+            <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
+              <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="">
+                    <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                  </div>
+                  <span class="fs-sm16 fw-lighter">Berapa lama sebelumnya saya harus memesan kue ulang tahun?</span>
+                </div>
+                <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                  style="color: #5656be"></iconify-icon>
+              </div>
+              <div class="faq-answer" :class="!open && 'close-faq'">
+                <p class="fs-sm12 fw-lighter mt-3">Kami sarankan Anda memesan kue ulang tahun Anda setidaknya 2-3 minggu
+                  sebelum tanggal acara untuk memastikan ketersediaan dan persiapan yang tepat.</p>
+              </div>
+            </div>
+            <div class="d-flex flex-row justify-content-center" :class="more != 1?'d-none':''">
+              <div class="cursor-pointer p-2 border-radius16" @click="more++">
+                <span class="text-secondary more">Show More</span>
+              </div>
+            </div>
+            <div class="d-flex flex-column row-gap-3" :class="more < 2?'d-none':''">
+              <!-- 8-12 -->
+              <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
+                <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="">
+                      <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                    </div>
+                    <span class="fs-sm16 fw-lighter">Apakah Anda melakukan pengiriman?</span>
+                  </div>
+                  <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                    style="color: #5656be"></iconify-icon>
+                </div>
+                <div class="faq-answer" :class="!open && 'close-faq'">
+                  <p class="fs-sm12 fw-lighter mt-3"> Ya, kami menawarkan layanan pengiriman. Silakan berkomunikasi
+                    dengan
+                    kami untuk mengetahui wilayah cakupan dan biaya pengiriman. </p>
+                </div>
+              </div>
+              <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
+                <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="">
+                      <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                    </div>
+                    <span class="fs-sm16 fw-lighter">Apa metode pembayaran yang dapat saya gunakan?</span>
+                  </div>
+                  <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                    style="color: #5656be"></iconify-icon>
+                </div>
+                <div class="faq-answer" :class="!open && 'close-faq'">
+                  <p class="fs-sm12 fw-lighter mt-3">Kami menerima pembayaran melalui tunai, transfer bank, dan metode
+                    pembayaran lainnya. Semua detail pembayaran akan diberikan saat Anda memesan.</p>
+                </div>
+              </div>
+              <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
+                <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="">
+                      <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                    </div>
+                    <span class="fs-sm16 fw-lighter">Apa kebijakan pembatalan dan pengembalian dana Ilra CakeArt?</span>
+                  </div>
+                  <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                    style="color: #5656be"></iconify-icon>
+                </div>
+                <div class="faq-answer" :class="!open && 'close-faq'">
+                  <p class="fs-sm12 fw-lighter mt-3">Pengembalian dana 50% akan diberikan untuk pembatalan pemesanan
+                    yang
+                    dilakukan paling lambat 7 hari sebelum tanggal pengiriman.</p>
+                </div>
+              </div>
+              <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
+                <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="">
+                      <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                    </div>
+                    <span class="fs-sm16 fw-lighter">Apa jaminan kualitas kue Ilra CakeArt?</span>
+                  </div>
+                  <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
+                    style="color: #5656be"></iconify-icon>
+                </div>
+                <div class="faq-answer" :class="!open && 'close-faq'">
+                  <p class="fs-sm12 fw-lighter mt-3">Kami berkomitmen untuk memberikan kue ulang tahun berkualitas
+                    tinggi
+                    kepada pelanggan kami. Jika Anda memiliki masalah dengan pesanan Anda, silakan hubungi kami, dan
+                    kami
+                    akan berusaha menyelesaikannya.</p>
+                </div>
+              </div>
+              <div class="d-flex flex-row justify-content-center" :class="more > 2?'d-none':''">
+                <div class="cursor-pointer p-2 border-radius16" @click="more = 0">
+                  <span class="text-secondary more">Show Less</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Contact Us -->
-    <div class="row mt-5 justify-content-center" id="contact">
+    <div class="row mt-5 justify-content-center" id="contact" data-aos="zoom-in" x-data="{name:'',message:''}">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Contact Us
@@ -484,14 +731,14 @@
       <div class="col-md-6 col-12 order-1">
         <div class="d-flex flex-column gap-2">
           <span>Name: </span>
-          <input class="border rounded-4 p-2" type="text">
+          <input class="border rounded-4 p-2" type="text" x-model="name">
         </div>
         <div class="d-flex flex-column gap-2 mt-3">
           <span>Message: </span>
-          <textarea class="border rounded-4 w-100 message-chatbox" type="text"></textarea>
+          <textarea class="border rounded-4 w-100 message-chatbox" type="text" x-model="message"></textarea>
         </div>
         <div class="row justify-content-center">
-          <div class="btn-secondary mt-3 text-white d-inline-block p-2 px-2">
+          <div class="btn-secondary mt-3 text-white d-inline-block p-2 px-2" @click="sendToWhatsapp(name,message)">
             <div class="d-flex align-items-center">
               <iconify-icon icon="fa:paper-plane" style="color: white;" width="20"></iconify-icon>
               <span class="ms-1 fs-sm16 text-center fw-bolder">
@@ -506,14 +753,14 @@
       </div>
     </div>
   </div>
-  <footer class="mt-5 justify-content-center w-100 bg-secondary text-white p-4 px-md-5">
+  <footer class="mt-5 justify-content-center w-100 bg-footer text-white p-4 px-md-5">
     <div class="container">
       <div class="footer-logo d-flex">
         <div class="text-nowrap d-flex flex-row">
           <span class="fs-sm24 fw-semibold px-3">
             Ilra CakeArt
           </span>
-          <div class="h-100 border border-1 border-radius16"></div>
+          <div class="h-100 border border-base border-1 border-radius16"></div>
           <span class="fw-semibold fs-sm12 px-3 text-nowrap">Customize your <br> cake</span>
         </div>
       </div>
@@ -539,13 +786,13 @@
           <span class="fw-semibold fs-sm16">Quick Links</span>
           <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
             <div>
-              <span class="fw-semibold fs-sm12">Home</span>
+              <span @click="scrollTo('home')" class="fw-semibold fs-sm12">Home</span>
             </div>
             <div>
-              <span class="fw-semibold fs-sm12">Products</span>
+              <span @click="scrollTo('products')" class="fw-semibold fs-sm12">Products</span>
             </div>
             <div>
-              <span class="fw-semibold fs-sm12">Contact Us</span>
+              <span @click="scrollTo('contact')" class="fw-semibold fs-sm12">Contact Us</span>
             </div>
           </div>
         </div>
@@ -581,6 +828,8 @@
   <script>
     AOS.init();
   </script>
+  <script src="script.js"></script>
+
 </body>
 
 </html>
