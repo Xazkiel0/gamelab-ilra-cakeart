@@ -27,7 +27,7 @@
 
 <body x-data="">
   <div class="bg-hero min-vh-100">
-    <div class="position-relative">
+    <div class="position-relative" x-data="{mobileNav:false}">
       <nav class="py-2 text-white fixed-top z-3 vw-100" id="navbar">
         <div class="container-lg navigation align-content-center d-flex justify-content-between align-items-center">
           <a class="fw-bolder fs-sm24 text-nowrap" @click="location.reload('/index.html')">Ilra CakeArt</a>
@@ -54,13 +54,13 @@
               <span class="fs-sm16 text-center fw-bolder"> Order Now </span>
             </div>
           </div>
-          <div class="more d-block d-sm-none px-2 p-1">
+          <div class="more d-block d-sm-none px-2 p-1 cursor-pointer" @click="mobileNav = !mobileNav">
             <iconify-icon icon="ci:hamburger-md" width="28" height="28"></iconify-icon>
           </div>
         </div>
       </nav>
       <!-- Mobile Navbar -->
-      <div class="py-2 text-white fixed-top z-3 vw-100">
+      <div class="py-2 text-white fixed-top z-3 vw-100" x-show="mobileNav">
         <div>
           <div
             class="vw-100 d-sm-none d-flex fixed-bottom bg-primary justify-content-evenly align-items-center fs-sm12 user-select-none">
