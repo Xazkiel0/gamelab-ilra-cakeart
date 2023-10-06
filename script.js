@@ -30,10 +30,9 @@ ${_message}`;
 }
 
 function scrollTo(_el) {
-  const el = document.getElementById(toString(_el).toLowerCase());
-
+  const el = document.getElementById(String(_el).toLowerCase());
   if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
   }
 
 }

@@ -61,7 +61,8 @@
       <!-- Mobile Navbar -->
       <div class="py-2 text-white fixed-top z-3 vw-100">
         <div>
-          <div class="d-sm-none d-flex fixed-bottom bg-primary justify-content-evenly align-items-center fs-sm12">
+          <div
+            class="d-sm-none d-flex fixed-bottom bg-primary justify-content-evenly align-items-center fs-sm12 user-select-none">
             <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('home')">
               <iconify-icon icon="cil:home" style="color: white;" width="20"></iconify-icon>
               <span>Home</span>
@@ -121,9 +122,10 @@
   </div>
   <div class="main container text-base">
     <!-- About -->
+    <div id="about"></div>
     <div class="row mt-5 justify-content-center" data-aos="zoom-in">
       <div class="about col-12 d-flex" data-aos="fade-up">
-        <div id="about" class=" fs-sm20 fw-semibold mx-auto">
+        <div class=" fs-sm20 fw-semibold mx-auto">
           What is
           <span class="text-secondary">Ilra CakeArt?</span>
         </div>
@@ -206,7 +208,8 @@
       </div>
     </div>
     <!-- Products -->
-    <div id="products" class="row mt-5 justify-content-center" data-aos="zoom-in">
+    <div id="products"></div>
+    <div class="row mt-5 justify-content-center" data-aos="zoom-in">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Our
@@ -722,7 +725,8 @@
       </div>
     </div>
     <!-- Contact Us -->
-    <div class="row mt-5 justify-content-center" id="contact" data-aos="zoom-in" x-data="{name:'',message:''}">
+    <div id="contact"></div>
+    <div class="row mt-5 justify-content-center" data-aos="zoom-in" x-data="{name:'',message:''}">
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Contact Us
@@ -768,31 +772,37 @@
         <div class="col-12 col-md col-sm-6 footer-content">
           <span class="fw-semibold fs-sm16">Contact Us</span>
           <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
-            <div class="d-flex align-items-center gap-2">
+            <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
+              href="https://api.whatsapp.com/send/?phone=6281357749593">
               <iconify-icon icon="ic:baseline-whatsapp" style="color: white;" width="24"></iconify-icon>
               <span class="fw-semibold fs-sm12">WhatsApp</span>
-            </div>
-            <div class="d-flex align-items-center gap-2">
+            </a>
+            <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
+              href="https://www.instagram.com/arumbudi_ilra/">
               <iconify-icon icon="mdi:instagram" style="color: white;" width="24"></iconify-icon>
               <span class="fw-semibold fs-sm12">Instagram</span>
-            </div>
-            <div class="d-flex align-items-center gap-2">
+            </a>
+            <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
+              href="mailto:arumbudi@gmail.com">
               <iconify-icon icon="eva:email-outline" style="color: white;" width="24"></iconify-icon>
               <span class="fw-semibold fs-sm12">Email</span>
-            </div>
+            </a>
           </div>
         </div>
         <div class="col-12 col-md col-sm-6 footer-content">
           <span class="fw-semibold fs-sm16">Quick Links</span>
           <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
             <div>
-              <span @click="scrollTo('home')" class="fw-semibold fs-sm12">Home</span>
+              <span @click="scrollTo('home')"
+                class="fw-semibold fs-sm12 p-2 cursor-pointer user-select-none">Home</span>
             </div>
             <div>
-              <span @click="scrollTo('products')" class="fw-semibold fs-sm12">Products</span>
+              <span @click="scrollTo('products')"
+                class="fw-semibold fs-sm12 p-2 cursor-pointer user-select-none">Products</span>
             </div>
             <div>
-              <span @click="scrollTo('contact')" class="fw-semibold fs-sm12">Contact Us</span>
+              <span @click="scrollTo('contact')" class="fw-semibold fs-sm12 p-2 cursor-pointer user-select-none">Contact
+                Us</span>
             </div>
           </div>
         </div>
