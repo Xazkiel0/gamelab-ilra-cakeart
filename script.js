@@ -30,7 +30,7 @@ ${_message}`;
 }
 
 function scrollTo(_el) {
-  const el = document.getElementById(_el);
+  const el = document.getElementById(toString(_el).toLowerCase());
 
   if (el) {
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
