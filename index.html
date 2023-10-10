@@ -26,11 +26,16 @@
 </head>
 
 <body x-data="">
-  <div class="bg-hero min-vh-100">
-    <div class="position-relative" x-data="{mobileNav:false}">
-      <nav class="py-2 text-white fixed-top z-3 vw-100" id="navbar">
-        <div class="container-lg navigation align-content-center d-flex justify-content-between align-items-center">
-          <a class="fw-bolder fs-sm24 text-nowrap" @click="location.reload('/index.html')">Ilra CakeArt</a>
+  <div class="text-base hero vh-md-100 position-relative overflow-hidden">
+    <div class="overflow-hidden">
+      <div class="circle-blur1"></div>
+    </div>
+    <div class="h" x-data="{mobileNav:false}">
+      <nav class="py-2 fixed-top z-3 vw-100" id="navbar">
+        <div
+          class="container-lg navigation align-content-center d-flex justify-content-between align-items-center user-select-none">
+          <a class="fw-bolder text-base fs-sm24 text-nowrap" @click="location.reload('/index.html')">Ilra
+            CakeArt</a>
           <div class="navbar" id="">
             <div class="d-none d-sm-flex">
               <div @click="scrollTo('home')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
@@ -50,7 +55,7 @@
           <div class="d-none d-md-block">
             <div class="btn-primary d-flex p-1 px-2 gap-1 cursor-pointer user-select-none"
               @click="sendToWhatsapp('','',true)">
-              <iconify-icon width="24" icon="ic:baseline-whatsapp" style="color: white"></iconify-icon>
+              <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
               <span class="fs-sm16 text-center fw-bolder"> Order Now </span>
             </div>
           </div>
@@ -60,41 +65,42 @@
         </div>
       </nav>
       <!-- Mobile Navbar -->
-      <div class="py-2 text-white fixed-top z-3 vw-100" x-show="mobileNav">
+      <div class="py-2 fixed-top z-3 vw-100 text-base" x-show="mobileNav">
         <div>
           <div
-            class="vw-100 d-sm-none d-flex fixed-bottom bg-primary justify-content-evenly align-items-center fs-sm12 user-select-none">
+            class="vw-100 d-sm-none d-flex fixed-bottom bg-light justify-content-evenly align-items-center fs-sm12 user-select-none">
             <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('home')">
-              <iconify-icon icon="cil:home" style="color: white;" width="20"></iconify-icon>
-              <span>Home</span>
+              <iconify-icon icon="cil:home" width="20"></iconify-icon>
+              <span class="fw-bold">Home</span>
             </div>
             <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('about')">
-              <iconify-icon icon="solar:chat-round-like-broken" style="color: white;" width="20"></iconify-icon>
-              <span>About</span>
+              <iconify-icon icon="solar:chat-round-like-broken" width="20"></iconify-icon>
+              <span class="fw-bold">About</span>
             </div>
             <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('products')">
-              <iconify-icon icon="bi:box" style="color: white;" width="20"></iconify-icon>
-              <span>Products</span>
+              <iconify-icon icon="bi:box" width="20"></iconify-icon>
+              <span class="fw-bold">Products</span>
             </div>
             <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('contact')">
-              <iconify-icon icon="grommet-icons:contact-info" style="color: white;" width="20"></iconify-icon>
-              <span>Contact</span>
+              <iconify-icon icon="grommet-icons:contact-info" width="20"></iconify-icon>
+              <span class="fw-bold">Contact</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container pt-5 user-select-none" id="home">
-      <div class="row">
-        <div class="col-12 col-md-6 order-md-last">
+    <div class="container user-select-none h-100" id="home">
+      <div class="row h-100 w-100">
+        <div class="col-12 col-md-6 order-md-last align-items-lg-end align-items-center d-flex justify-content-end">
           <div class="p-4">
-            <div class="mx-auto hero-img-wrap">
+            <div class="mx-auto hero-imgs-wrap position-relative">
+              <div class="circle-blur2 d-none d-lg-block"></div>
               <img src="hero.png" class="h-100 w-100" alt="" />
             </div>
           </div>
         </div>
         <div class="col-12 col-md-6 h-auto d-flex align-self-center mt-lg-n24 mt-0">
-          <div class="p-4 d-flex row row-gap-3 row-gap-md-4 text-white h-100">
+          <div class="p-4 d-flex row row-gap-3 row-gap-md-4 h-100">
             <div class="fs-sm20 fw-semibold">
               Kue sehat dengan rasa yang
               nikmat
@@ -108,7 +114,7 @@
               </div>
               <div class="d-none d-sm-block d-md-none">
                 <div class="btn-primary d-flex p-1 px-2 row-gap-1 cursor-pointer" @click="sendToWhatsapp('','',true)">
-                  <iconify-icon width="24" icon="ic:baseline-whatsapp" style="color: white"></iconify-icon>
+                  <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
                   <span class="fs-sm16 text-center fw-bolder">
                     Order Now
                   </span>
@@ -121,7 +127,7 @@
     </div>
     <div id="endOfHero"></div>
   </div>
-  <div class="main container text-base vw-100 overflow-x-hidden">
+  <div class="main container text-base vw-100 overflow-x-hidden position-relative">
     <!-- About -->
     <div id="about"></div>
     <div class="row mt-5 justify-content-center" data-aos="zoom-in">
@@ -220,8 +226,9 @@
       <div class="row mt-5" x-data="{show:[true,false,false]}">
         <ul class="nav nav-pills mb-3 justify-content-center gap-2" role="tablist">
           <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="400">
-            <button class="nav-link bg-secondary text-white active" type="button" role="tab"
-              @click="show = [true,false,false]">Popular Cakes</button>
+            <button class="nav-link bg-secondary text-white" type="button" role="tab"
+              @click="show = [true,false,false]">Popular
+              Cakes</button>
           </li>
           <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="700">
             <button class="nav-link bg-secondary text-white" type="button" role="tab"
@@ -736,16 +743,17 @@
       <div class="col-md-6 col-12 order-1">
         <div class="d-flex flex-column gap-2">
           <span>Name: </span>
-          <input class="border rounded-4 p-2" type="text" x-model="name">
+          <input class="border rounded-4 px-3 py-2" type="text" x-model="name">
         </div>
         <div class="d-flex flex-column gap-2 mt-3">
           <span>Message: </span>
-          <textarea class="border rounded-4 w-100 message-chatbox" type="text" x-model="message"></textarea>
+          <textarea class="border rounded-4 w-100 message-chatbox px-3 py-2" type="text" x-model="message"></textarea>
         </div>
         <div class="row justify-content-center">
-          <div class="btn-secondary mt-3 text-white d-inline-block p-2 px-2" @click="sendToWhatsapp(name,message)">
+          <div class="btn-primary text-base mt-3 text-white d-inline-block p-2 px-2"
+            @click="sendToWhatsapp(name,message)">
             <div class="d-flex align-items-center">
-              <iconify-icon icon="fa:paper-plane" style="color: white;" width="20"></iconify-icon>
+              <iconify-icon icon="fa:paper-plane" width="20"></iconify-icon>
               <span class="ms-1 fs-sm16 text-center fw-bolder">
                 Order Now
               </span>
@@ -754,7 +762,7 @@
         </div>
       </div>
       <div class="col-md-6 col-12 px-5 d-flex align-items-center justify-content-center order-0 order-md-2">
-        <img src="https://gamelab-ilra-cakeart.vercel.app/contact-us-img.png" class="w-100 w-lg-75" alt="" srcset="">
+        <img src="contact-us-img2.png" class="w-100 w-lg-75" alt="" srcset="">
       </div>
     </div>
   </div>
