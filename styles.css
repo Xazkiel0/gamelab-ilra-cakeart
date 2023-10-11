@@ -170,6 +170,15 @@ body {
   height: 0px !important;
 }
 
+.category-product {
+  /* width: 20px;
+  height: 20px; */
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid #696984;
+}
+
 .text-body-card {
   text-align: center;
   font-size: 14px;
