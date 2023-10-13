@@ -185,6 +185,18 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  /* display: none; */
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.product-desc {
+  /* max-height: 60px; */
+  /* overflow: hidden; */
+  /* white-space: nowrap; */
+  /* display: block;
+  text-overflow: ellipsis; */
 }
 
 .border-radius16 {
@@ -204,6 +216,20 @@ body {
 .card-why-body:hover .card-why-content {
   transition: all 0.5s ease-in-out;
   transform: translateY(-30%);
+}
+.card-why-body:hover .text-body-card {
+  /* display: block; */
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-why-content {
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.swiper-slide {
+  display: flex !important;
 }
 .card-why-body {
   border-radius: 20px;
@@ -253,6 +279,10 @@ body {
   /* background-color: rgb(255 255 255 / 0.3); */
 }
 
+.hero-img-wrap img {
+  background-size: cover;
+}
+
 .circle-blur1 {
   max-width: 900px;
   border-radius: 50%;
@@ -267,12 +297,10 @@ body {
   z-index: -2;
 }
 .circle-blur2 {
-  width: 330px;
+  width: 200px;
   border-radius: 967px;
   height: 98%;
-  transform: translate(50%, 50%);
-  right: 50%;
-  bottom: 50%;
+  right: 1px;
   position: absolute;
   z-index: -2;
   background: #eea6b7;

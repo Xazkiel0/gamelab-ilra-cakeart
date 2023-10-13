@@ -17,7 +17,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
@@ -29,8 +31,10 @@
   <div class="text-base hero vh-md-100 position-relative overflow-hidden">
     <div class="overflow-hidden">
       <div class="circle-blur1"></div>
+      <div class="circle-blur2 d-none d-lg-block"></div>
     </div>
-    <div class="h" x-data="{mobileNav:false}">
+    <!-- Navbar -->
+    <div x-data="{mobileNav:false}">
       <nav class="py-2 fixed-top z-3 vw-100" id="navbar">
         <div
           class="container-lg navigation align-content-center d-flex justify-content-between align-items-center user-select-none">
@@ -89,35 +93,101 @@
         </div>
       </div>
     </div>
+    <!-- Hero -->
     <div class="container user-select-none h-100" id="home">
-      <div class="row h-100 w-100">
-        <div class="col-12 col-md-6 order-md-last align-items-lg-end align-items-center d-flex justify-content-end">
-          <div class="p-4">
-            <div class="mx-auto hero-imgs-wrap position-relative">
-              <div class="circle-blur2 d-none d-lg-block"></div>
-              <img src="hero.png" class="h-100 w-100" alt="" />
+      <div class="swiper mySwiper d-flex justify-content-center mt-5">
+        <div class="swiper-wrapper vw-100 vh-100">
+          <div class="row h-100 w-100 swiper-slide">
+            <div class="col-12 col-md-6 order-md-last align-items-lg-end align-items-center d-flex justify-content-end">
+              <div class="py-4">
+                <div class="mx-auto hero-imgs-wrap position-relative">
+                  <img src="hero.png" class="h-100 w-100" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 h-auto d-flex align-self-center mt-lg-n24 mt-0">
+              <div class="p-4 d-flex row row-gap-3 row-gap-md-4 h-100">
+                <div class="fs-sm20 fw-semibold">
+                  Kue sehat dengan rasa yang
+                  nikmat
+                </div>
+                <span class="fs-sm16 fw-semibold">Penuhi momen berhargamu dengan
+                  kue istimewa untuk momen
+                  bahagia dengan keluarga</span>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                  <div class="btn-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
+                    Get Started
+                  </div>
+                  <div class="d-none d-sm-block d-md-none">
+                    <div class="btn-primary d-flex p-1 px-2 row-gap-1 cursor-pointer"
+                      @click="sendToWhatsapp('','',true)">
+                      <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
+                      <span class="fs-sm16 text-center fw-bolder">
+                        Pesan Sekarang
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 h-auto d-flex align-self-center mt-lg-n24 mt-0">
-          <div class="p-4 d-flex row row-gap-3 row-gap-md-4 h-100">
-            <div class="fs-sm20 fw-semibold">
-              Kue sehat dengan rasa yang
-              nikmat
-            </div>
-            <span class="fs-sm16 fw-semibold">Penuhi momen berhargamu dengan
-              kue istimewa untuk momen
-              bahagia dengan keluarga</span>
-            <div class="d-flex justify-content-center justify-content-md-start gap-3">
-              <div class="btn-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
-                Get Started
+          <div class="row h-100 w-100 swiper-slide">
+            <div class="col-12 col-md-6 order-md-last align-items-lg-end align-items-center d-flex justify-content-end">
+              <div class="py-4">
+                <div class="mx-auto hero-imgs-wrap position-relative">
+                  <img src="hero2.png" class="h-100 w-100" alt="" />
+                </div>
               </div>
-              <div class="d-none d-sm-block d-md-none">
-                <div class="btn-primary d-flex p-1 px-2 row-gap-1 cursor-pointer" @click="sendToWhatsapp('','',true)">
-                  <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
-                  <span class="fs-sm16 text-center fw-bolder">
-                    Pesan Sekarang
-                  </span>
+            </div>
+            <div class="col-12 col-md-6 h-auto d-flex align-self-center mt-lg-n24 mt-0">
+              <div class="p-4 d-flex row row-gap-3 row-gap-md-4 h-100">
+                <div class="fs-sm20 fw-semibold">Kue lezat untuk setiap momen berhargamu</div>
+                <span class="fs-sm16 fw-semibold">Bersama keluarga, lengkapi momen berharga dengan kue lezat kami.
+                  Buatlah setiap momen terasa istimewa dengan rasa yang nikmat.</span>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                  <div class="btn-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
+                    Get Started
+                  </div>
+                  <div class="d-none d-sm-block d-md-none">
+                    <div class="btn-primary d-flex p-1 px-2 row-gap-1 cursor-pointer"
+                      @click="sendToWhatsapp('','',true)">
+                      <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
+                      <span class="fs-sm16 text-center fw-bolder">
+                        Pesan Sekarang
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row h-100 w-100 swiper-slide">
+            <div class="col-12 col-md-6 order-md-last align-items-lg-end align-items-center d-flex justify-content-end">
+              <div class="py-4">
+                <div class="mx-auto hero-imgs-wrap position-relative">
+                  <img src="hero3.png" class="h-100 w-100" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 h-auto d-flex align-self-center mt-lg-n24 mt-0">
+              <div class="p-4 d-flex row row-gap-3 row-gap-md-4 h-100">
+                <div class="fs-sm20 fw-semibold">Kue istimewa untuk hari istimewa Anda, dengan cinta dalam setiap
+                  resepnya</div>
+                <span class="fs-sm16 fw-semibold">Setiap momen akan lebih terasa istimewa dengan kue sehat yang dibuat
+                  dengan penuh cinta</span>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                  <div class="btn-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
+                    Get Started
+                  </div>
+                  <div class="d-none d-sm-block d-md-none">
+                    <div class="btn-primary d-flex p-1 px-2 row-gap-1 cursor-pointer"
+                      @click="sendToWhatsapp('','',true)">
+                      <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
+                      <span class="fs-sm16 text-center fw-bolder">
+                        Pesan Sekarang
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -222,153 +292,43 @@
           <span class="text-secondary">Products</span>
         </div>
       </div>
-      <div class="row mt-5" x-data="{show:[true,false,false]}">
+      <div class="row mt-5" x-data="products_data">
         <ul class="nav nav-pills mb-3 justify-content-center gap-2" role="tablist">
           <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="400">
             <button class="nav-link bg-secondary text-white" type="button" role="tab"
-              @click="show = [true,false,false]">Popular
+              @click="swapCake(cakes.popularCakes)">Popular
               Cakes</button>
           </li>
           <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="700">
             <button class="nav-link bg-secondary text-white" type="button" role="tab"
-              @click="show = [false,true,false]">Kue Anak</button>
+              @click="swapCake(cakes.kidCakes)">Kue
+              Anak</button>
           </li>
           <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="1000">
             <button class="nav-link bg-secondary text-white" type="button" role="tab"
-              @click="show = [false,false,true]">Cheesecake</button>
+              @click="swapCake(cakes.cheesecakes)">Cheesecake</button>
           </li>
         </ul>
         <div class="tab-content">
-          <div class="row d-flex justify-content-center tab-pane" role="tabpanel" :class="!show[0] && 'd-none h-0'">
+          <div class="row d-flex justify-content-center tab-pane" role="tabpanel">
             <div
               class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-auto products-wrapper d-flex gap-2 justify-content-center">
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/39bf661e-bd42-44e7-baed-2cf007b867d1.jpeg"
-                  class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Sakura Cake
+              <template x-for="cake in products">
+                <div class="card-product col border" data-aos="fade-left">
+                  <img :src="cake.imgPath" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
+                    alt="" srcset="">
+                  <div x-text="cake.name" class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
+                  </div>
+                  <div x-text="cake.description"
+                    class="product-desc px-3 pb-2  fs-10 fw-semibold d-flex gap-1 flex-wrap text-start">
+                  </div>
                 </div>
-                <div class="px-3 fs-10 fw-semibold d-flex gap-1 text-nowrap flex-wrap text-start">
-                  <div class="category-product">Category 1</div>
-                  <div class="category-product">Category 2</div>
-                  <div class="category-product">Category 3</div>
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/842e12cd-5167-49d6-85b7-90f12a3df6a5.jpeg"
-                  class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Jelly Art Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/4.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                  alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Romantic Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/5.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                  alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Books Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/6.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                  alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Car-themed Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/7.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                  alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Anniversary Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/8.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                  alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Rustic Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/9.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                  alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Beach-themed Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/10.jpeg" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                  alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Flower Cake
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row d-flex justify-content-center tab-pane" role="tabpanel" :class="!show[1] && 'd-none h-0'">
-            <div
-              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-auto products-wrapper d-flex gap-2 justify-content-center">
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/hello_kitty/Hellokitty4.jpg" class="object-fit-cover rounded-top-3 w-100"
-                  draggable="false" height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Sakura Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/car/cartheme1.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
-                  height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Car-themed Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/construct/theme1.jpg" class="object-fit-cover rounded-top-3 w-100" draggable="false"
-                  height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Construct-themed Cake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/frock_cake/Frock1.jpg" class="object-fit-cover rounded-top-3 w-100"
-                  draggable="false" height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Frock Cake
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row d-flex justify-content-center tab-pane" role="tabpanel" :class="!show[2] && 'd-none h-0'">
-            <div
-              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-auto products-wrapper d-flex gap-2 justify-content-center">
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/new_york/cheesecake1.jpg" class="object-fit-cover rounded-top-3 w-100"
-                  draggable="false" height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  New York CheeseCake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/strawberrywhipcream/cheesecake1.jpg" class="object-fit-cover rounded-top-3 w-100"
-                  draggable="false" height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Strawberry Whipcream CheeseCake
-                </div>
-              </div>
-              <div class="card-product col border" data-aos="fade-left">
-                <img src="all_cakes/basque_burn/cheesecake1.jpg" class="object-fit-cover rounded-top-3 w-100"
-                  draggable="false" height="240" alt="" srcset="">
-                <div class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
-                  Basque Burn CheeseCake
-                </div>
-              </div>
+              </template>
+              <!-- <div class="px-3 fs-10 fw-semibold d-flex gap-1 text-nowrap flex-wrap text-start">
+                <div class="category-product">Category 1</div>
+                <div class="category-product">Category 2</div>
+                <div class="category-product">Category 3</div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -410,89 +370,6 @@
         </div>
         <div class="col-4">
           <img class="shadow-base w-100" src="halal-cert2.png" alt="" srcset="">
-        </div>
-      </div>
-    </div>
-    <!-- Feedback -->
-    <div id="feedback" class="row mt-5 justify-content-center" data-aos="zoom-in">
-      <div class="why col-12 d-flex flex-column">
-        <div class=" fs-sm20 fw-semibold mx-auto">
-          Customers
-          <span class="text-secondary">Feedback</span>
-        </div>
-        <div class="fs-9 text-center">
-          <span>(From Google Reviews)</span>
-        </div>
-      </div>
-      <div class="row flex-row gap-2 justify-content-center mt-5">
-        <div class="row justify-content-center gap-3">
-          <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="500">
-            <div class="d-flex flex-row align-items-center">
-              <div class="avatar-user border">
-                <img class="w-100 h-auto" src="risa-anna.png" alt="" srcset="">
-              </div>
-              <div class="name ms-2">
-                <span class="fw-light">Risa Anna</span>
-              </div>
-            </div>
-            <div class="py-1">
-              <div class="stars py-1">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-              </div>
-              <p class="fs-sm12">Thankyou Ilra Cake Art yg sudah membuat birthday adekku jadi spesial sekali. Cake
-                custom designnya keren, kuenya lembut, manisnya pas, BUTTER CREAMnya ngga eneg</p>
-            </div>
-          </div>
-          <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="800">
-            <div class="d-flex flex-row align-items-center">
-              <div class="avatar-user border">
-                <img class="w-100 h-auto" src="tia-saraswati.png" alt="" srcset="">
-              </div>
-              <div class="name ms-2">
-                <span class="fw-light">Tia Saraswati</span>
-              </div>
-            </div>
-            <div class="py-1">
-              <div class="stars py-1">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-              </div>
-              <p class="fs-sm12">Tekstur cakenya yg lembut, nyes, dan nggak terlalu manis..nggak seret di lidah.
-                Lapisan
-                coklat antar cake nya itu juga enak, aku gak tahu mbak arum pake merk apa..tapi rasanya elegan gitu,
-                gak
-                terlalu manis.</p>
-            </div>
-          </div>
-          <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="1100">
-            <div class="d-flex flex-row align-items-center">
-              <div class="avatar-user border">
-                <img class="w-100 h-auto" src="oktavia-agustin.png" alt="" srcset="">
-              </div>
-              <div class="name ms-2">
-                <span class="fw-light">Oktavia Agustin</span>
-              </div>
-            </div>
-            <div class="py-1">
-              <div class="stars py-1">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-              </div>
-              <p class="fs-sm12">Syukron jazakillahu khayr Ilra CakeArt 🙏🙏 kuenya cantik,, enak, lembut, manisnya
-                pas,
-                dan creamnya juga gak bikin eneg 🤗🥳 </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -736,6 +613,89 @@
         </div>
       </div>
     </div>
+    <!-- Feedback -->
+    <div id="feedback" class="row mt-5 justify-content-center" data-aos="zoom-in">
+      <div class="why col-12 d-flex flex-column">
+        <div class=" fs-sm20 fw-semibold mx-auto">
+          Customers
+          <span class="text-secondary">Feedback</span>
+        </div>
+        <div class="fs-9 text-center">
+          <span>(From Google Reviews)</span>
+        </div>
+      </div>
+      <div class="row flex-row gap-2 justify-content-center mt-5">
+        <div class="row justify-content-center gap-3">
+          <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="500">
+            <div class="d-flex flex-row align-items-center">
+              <div class="avatar-user border">
+                <img class="w-100 h-auto" src="risa-anna.png" alt="" srcset="">
+              </div>
+              <div class="name ms-2">
+                <span class="fw-light">Risa Anna</span>
+              </div>
+            </div>
+            <div class="py-1">
+              <div class="stars py-1">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+              </div>
+              <p class="fs-sm12">Thankyou Ilra Cake Art yg sudah membuat birthday adekku jadi spesial sekali. Cake
+                custom designnya keren, kuenya lembut, manisnya pas, BUTTER CREAMnya ngga eneg</p>
+            </div>
+          </div>
+          <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="800">
+            <div class="d-flex flex-row align-items-center">
+              <div class="avatar-user border">
+                <img class="w-100 h-auto" src="tia-saraswati.png" alt="" srcset="">
+              </div>
+              <div class="name ms-2">
+                <span class="fw-light">Tia Saraswati</span>
+              </div>
+            </div>
+            <div class="py-1">
+              <div class="stars py-1">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+              </div>
+              <p class="fs-sm12">Tekstur cakenya yg lembut, nyes, dan nggak terlalu manis..nggak seret di lidah.
+                Lapisan
+                coklat antar cake nya itu juga enak, aku gak tahu mbak arum pake merk apa..tapi rasanya elegan gitu,
+                gak
+                terlalu manis.</p>
+            </div>
+          </div>
+          <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="1100">
+            <div class="d-flex flex-row align-items-center">
+              <div class="avatar-user border">
+                <img class="w-100 h-auto" src="oktavia-agustin.png" alt="" srcset="">
+              </div>
+              <div class="name ms-2">
+                <span class="fw-light">Oktavia Agustin</span>
+              </div>
+            </div>
+            <div class="py-1">
+              <div class="stars py-1">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+                <img src="star.svg" alt="">
+              </div>
+              <p class="fs-sm12">Syukron jazakillahu khayr Ilra CakeArt 🙏🙏 kuenya cantik,, enak, lembut, manisnya
+                pas,
+                dan creamnya juga gak bikin eneg 🤗🥳 </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Contact Us -->
     <div id="contact"></div>
     <div class="row mt-5 justify-content-center" data-aos="zoom-in" x-data="{name:'',message:''}">
@@ -853,7 +813,30 @@
     AOS.init();
   </script>
   <script src="script.js"></script>
-
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      centeredSlides: true,
+      loop: true,
+      spaceBetween: 0,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          spaceBetween: 0
+        },
+        768: {
+          spaceBetween: 150
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>
