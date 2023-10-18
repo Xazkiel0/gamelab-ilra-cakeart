@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -27,8 +28,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body x-data="">
-  <div class="text-base hero vh-md-100 position-relative overflow-hidden">
+<body class="user-select-none">
+  <div class="text-base hero h-auto vh-md-100 position-relative overflow-hidden">
     <div class="overflow-hidden">
       <div class="circle-blur1"></div>
       <div class="circle-blur2 d-none d-lg-block"></div>
@@ -96,7 +97,7 @@
     <!-- Hero -->
     <div class="container user-select-none h-100" id="home">
       <div class="swiper mySwiper d-flex justify-content-center mt-5">
-        <div class="swiper-wrapper vw-100 vh-100">
+        <div class="swiper-wrapper vw-100">
           <div class="row h-100 w-100 swiper-slide">
             <div class="col-12 col-md-6 order-md-last align-items-lg-end align-items-center d-flex justify-content-end">
               <div class="py-4">
@@ -197,14 +198,14 @@
     </div>
     <div id="endOfHero"></div>
   </div>
-  <div class="main container text-base vw-100 user-select-none overflow-x-hidden position-relative">
+  <div class="main container text-base vw-100  overflow-x-hidden position-relative">
     <!-- About -->
     <div id="about"></div>
     <div class="row mt-5 justify-content-center" data-aos="zoom-in">
       <div class="about col-12 d-flex" data-aos="fade-up">
         <div class=" fs-sm20 fw-semibold mx-auto">
           What is
-          <span class="text-secondary">Ilra CakeArt?</span>
+          <span class="text-primary">Ilra CakeArt?</span>
         </div>
       </div>
       <div class="about-text row mt-3">
@@ -213,13 +214,13 @@
         </div>
         <div class="col-12 col-lg-8 p-4">
           <div class="px-2" data-aos="fade-up">
-            <p class="text-center align-text-top text-base">Ilra CakeArt adalah sebuah toko kue yang menciptakan kue-kue
+            <p class="text-start align-text-top text-base">Ilra CakeArt adalah sebuah toko kue yang menciptakan kue-kue
               yang luar biasa. Kami hanya menggunakan bahan-bahan berkualitas tinggi, halal dan sehat untuk membuat kue
               yang menarik dan lezat.
             </p>
           </div>
-          <div class="mt-4 px-5" data-aos="fade-up">
-            <p class="text-center align-text-top text-base">Kami berdedikasi untuk membantu orang-orang menciptakan
+          <div class="mt-4 px-2" data-aos="fade-up">
+            <p class="text-start align-text-top text-base">Kami berdedikasi untuk membantu orang-orang menciptakan
               momen-momen berharga dan berkesan disaat acara berharga mereka. Kami berkomitmen untuk memberikan
               pelayanan terbaik kepada semua pelanggan kami.
             </p>
@@ -232,14 +233,14 @@
       <div class="why col-12 d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Why
-          <span class="text-secondary">Choose Us?</span>
+          <span class="text-primary">Choose Us?</span>
         </div>
       </div>
       <div class="row cards mt-5 justify-content-center gap-5">
         <div class="card-why-body p-4" data-aos="fade-left" data-aos-duration="500">
           <div class="d-flex flex-column gap-4 card-why-content">
             <div class="mx-auto icon-card">
-              <div class="bg-secondary p-3 border-radius16">
+              <div class="bg-primary p-3 border-radius16">
                 <img src="https://gamelab-ilra-cakeart.vercel.app/wand.svg" alt="" width="32">
               </div>
             </div>
@@ -261,7 +262,7 @@
         <div class="card-why-body p-4" data-aos="fade-left" data-aos-duration="1300">
           <div class="d-flex flex-column gap-4 card-why-content">
             <div class="mx-auto icon-card">
-              <div class="bg-primary p-3 border-radius16">
+              <div class="bg-secondary p-3 border-radius16">
                 <img src="https://gamelab-ilra-cakeart.vercel.app/leaf.svg" alt="" width="32">
               </div>
             </div>
@@ -289,46 +290,51 @@
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Our
-          <span class="text-secondary">Products</span>
+          <span class="text-primary">Products</span>
         </div>
       </div>
       <div class="row mt-5" x-data="products_data">
         <ul class="nav nav-pills mb-3 justify-content-center gap-2" role="tablist">
           <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="400">
-            <button class="nav-link bg-secondary text-white" type="button" role="tab"
-              @click="swapCake(cakes.popularCakes)">Popular
+            <button class="nav-link text-white" type="button" role="tab" :class="switchBtn('popularCakes')"
+              @click="swapCake('popularCakes')">Popular
               Cakes</button>
           </li>
           <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="700">
-            <button class="nav-link bg-secondary text-white" type="button" role="tab"
-              @click="swapCake(cakes.kidCakes)">Kue
+            <button class="nav-link text-white" type="button" role="tab" :class="switchBtn('kidCakes')"
+              @click="swapCake('kidCakes')">Kue
               Anak</button>
           </li>
           <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="1000">
-            <button class="nav-link bg-secondary text-white" type="button" role="tab"
-              @click="swapCake(cakes.cheesecakes)">Cheesecake</button>
+            <button class="nav-link text-white" type="button" role="tab" :class="switchBtn('cheesecakes')"
+              @click="swapCake('cheesecakes')">Cheesecake</button>
           </li>
         </ul>
         <div class="tab-content">
           <div class="row d-flex justify-content-center tab-pane" role="tabpanel">
             <div
               class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-auto products-wrapper d-flex gap-2 justify-content-center">
-              <template x-for="cake in products">
-                <div class="card-product col border" data-aos="fade-left">
-                  <img :src="cake.imgPath" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
-                    alt="" srcset="">
-                  <div x-text="cake.name" class=" fs-sm20 fw-semibold d-flex justify-content-center text-center mt-4">
+              <template x-for="(cake,index) in products">
+                <div class="card-product col border d-flex flex-column justify-content-between" data-aos="fade-left"
+                  data-bs-toggle="modal" :data-bs-target="('#') + cake.id">
+                  <div class="">
+                    <img :src="cake.imgPath" class="object-fit-cover rounded-top-3 w-100" draggable="false" height="240"
+                      alt="" srcset="">
+                    <div class="d-flex flex-row p-2 gap-1">
+                      <template x-for="cate in cake.categories">
+                        <div x-text="cate" class="category-product fs-11"></div>
+                      </template>
+                    </div>
                   </div>
-                  <div x-text="cake.description"
-                    class="product-desc px-3 pb-2  fs-10 fw-semibold d-flex gap-1 flex-wrap text-start">
+                  <div x-text="cake.name" class="text-price px-3 fs-sm20 fw-semibold d-flex text-start">
+                  </div>
+                  <div x-text="cake.price" class="px-3 fs-12 fw-semibold text-price">
+                  </div>
+                  <div class="px-3 py-2 fs-11 fw-semibold text-price">
+                    Click for more details
                   </div>
                 </div>
               </template>
-              <!-- <div class="px-3 fs-10 fw-semibold d-flex gap-1 text-nowrap flex-wrap text-start">
-                <div class="category-product">Category 1</div>
-                <div class="category-product">Category 2</div>
-                <div class="category-product">Category 3</div>
-              </div> -->
             </div>
           </div>
         </div>
@@ -343,7 +349,7 @@
       </div>
       <div class="row mt-5 justify-content-center">
         <div class="col-12 col-md-3 d-flex flex-column text-center" data-aos="fade-left" data-aos-duration="500">
-          <span class="fs-lg60 fw-bolder text-secondary">2+</span>
+          <span class="fs-lg60 fw-bolder text-primary">2+</span>
           <span class="fw-bold text-base opacity-75">Years Experience</span>
         </div>
         <div class="col-12 col-md-3 d-flex flex-column text-center" data-aos="fade-left" data-aos-duration="800">
@@ -351,7 +357,7 @@
           <span class="fw-bold text-base opacity-75">Variance of Cakes</span>
         </div>
         <div class="col-12 col-md-3 d-flex flex-column text-center" data-aos="fade-left" data-aos-duration="1100">
-          <span class="fs-lg60 fw-bolder text-primary">100+</span>
+          <span class="fs-lg60 fw-bolder text-secondary">100+</span>
           <span class="fw-bold text-base opacity-75">Customers Order</span>
         </div>
       </div>
@@ -361,7 +367,7 @@
       <div class="why d-flex">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Our
-          <span class="text-secondary">Certificate</span>
+          <span class="text-primary">Certificate</span>
         </div>
       </div>
       <div class="row mt-5 justify-content-center p-3 gap-2">
@@ -377,7 +383,7 @@
     <div class="row mt-5 justify-content-center text-base" data-aos="zoom-in" x-data="{more:0}">
       <div class="col-12 d-flex flex-column justify-content-center">
         <div class="why fs-sm20 fw-semibold mx-auto">
-          <span class="text-secondary">Frequently Asked Question</span>
+          <span class="text-primary">Frequently Asked Question</span>
         </div>
         <div class="d-flex flex-column row-gap-3 mt-5 p-3 mx-auto">
           <!-- 1-4 -->
@@ -385,14 +391,14 @@
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
-                  <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                  <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                 </div>
                 <span class="fs-sm16 fw-lighter">Apa saja jenis cake yang tersedia di Ilra CakeArt?</span>
               </div>
               <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
-            <div class="faq-answer" :class="!open && 'close-faq'">
+            <div x-show="open" x-collapse.duration.1000ms>
               <p class="fs-sm12 fw-lighter mt-3">
                 Kami menawarkan berbagai jenis cake: kue ulang tahun, cheesecake, kue buah, kue karakter, dan banyak
                 lagi. Silakan jelajahi katalog produk kami untuk melihat pilihan lengkapnya.
@@ -403,14 +409,14 @@
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
-                  <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                  <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                 </div>
                 <span class="fs-sm16 fw-lighter">Apakah Ilra CakeArt menyediakan kue khusus sesuai permintaan?</span>
               </div>
               <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
-            <div class="faq-answer" :class="!open && 'close-faq'">
+            <div x-show="open" x-collapse.duration.1000ms>
               <p class="fs-sm12 fw-lighter mt-3">
                 Ya, kami menerima pesanan kue khusus sesuai dengan tema dan preferensi Anda. Hubungi kami untuk
                 informasi lebih lanjut tentang pesanan khusus.
@@ -421,7 +427,7 @@
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
-                  <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                  <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                 </div>
                 <span class="fs-sm16 fw-lighter">Apakah kue Ilra CakeArt dapat disesuaikan untuk alergi makanan atau
                   preferensi diet tertentu?</span>
@@ -429,7 +435,7 @@
               <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
-            <div class="faq-answer" :class="!open && 'close-faq'">
+            <div x-show="open" x-collapse.duration.1000ms>
               <p class="fs-sm12 fw-lighter mt-3">
                 Ya, kami dapat menyesuaikan kue untuk alergi makanan atau preferensi diet tertentu. Beri tahu kami
                 tentang kebutuhan Anda saat memesan.
@@ -440,14 +446,14 @@
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
               <div class="d-flex flex-row align-items-center">
                 <div class="">
-                  <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                  <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                 </div>
                 <span class="fs-sm16 fw-lighter">Apakah kue Ilra CakeArt dapat disesuaikan dengan tema pesta?</span>
               </div>
               <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                 style="color: #5656be"></iconify-icon>
             </div>
-            <div class="faq-answer" :class="!open && 'close-faq'">
+            <div x-show="open" x-collapse.duration.1000ms>
               <p class="fs-sm12 fw-lighter mt-3">Tentu saja! Kami dapat menyesuaikan kue ulang tahun Anda dengan tema
                 pesta yang Anda inginkan. Beri tahu kami detailnya, dan kami akan bekerja untuk menciptakan kue yang
                 sempurna sesuai tema Anda.</p>
@@ -455,7 +461,7 @@
           </div>
           <div class="d-flex flex-row justify-content-center" :class="more != 0?'d-none':''">
             <div class="cursor-pointer p-2 border-radius16" @click="more++">
-              <span class="text-secondary more">Show More</span>
+              <span class="text-primary more">Show More</span>
             </div>
           </div>
           <!-- 4-8 -->
@@ -464,14 +470,14 @@
               <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
                 <div class="d-flex flex-row align-items-center">
                   <div class="">
-                    <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                    <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                   </div>
                   <span class="fs-sm16 fw-lighter">Apakah Anda memiliki toko fisik atau hanya berbasis online?</span>
                 </div>
                 <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                   style="color: #5656be"></iconify-icon>
               </div>
-              <div class="faq-answer" :class="!open && 'close-faq'">
+              <div x-show="open" x-collapse.duration.1000ms>
                 <p class="fs-sm12 fw-lighter mt-3">
                   Saat ini, kami adalah toko kue ulang tahun berbasis online, tetapi Anda dapat menghubungi kami secara
                   online atau melalui telepon untuk mendapatkan informasi lebih lanjut.
@@ -482,14 +488,14 @@
               <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
                 <div class="d-flex flex-row align-items-center">
                   <div class="">
-                    <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                    <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                   </div>
                   <span class="fs-sm16 fw-lighter">Berapa harga rata-rata kue Ilra CakeArt?</span>
                 </div>
                 <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                   style="color: #5656be"></iconify-icon>
               </div>
-              <div class="faq-answer" :class="!open && 'close-faq'">
+              <div x-show="open" x-collapse.duration.1000ms>
                 <p class="fs-sm12 fw-lighter mt-3"> Harga kue ulang tahun kami bervariasi tergantung pada ukuran,
                   desain,
                   dan bahan yang digunakan. Anda dapat melihat harga rinci di katalog WA kami.</p>
@@ -499,14 +505,14 @@
               <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
                 <div class="d-flex flex-row align-items-center">
                   <div class="">
-                    <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                    <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                   </div>
                   <span class="fs-sm16 fw-lighter">Bagaimana cara memesan kue ulang tahun dari Ilra CakeArt?</span>
                 </div>
                 <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                   style="color: #5656be"></iconify-icon>
               </div>
-              <div class="faq-answer" :class="!open && 'close-faq'">
+              <div x-show="open" x-collapse.duration.1000ms>
                 <p class="fs-sm12 fw-lighter mt-3">Anda dapat memesan kue ulang tahun melalui WA/situs web kami dengan
                   mengisi formulir pemesanan online atau menghubungi tim layanan pelanggan kami.</p>
               </div>
@@ -515,21 +521,21 @@
               <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
                 <div class="d-flex flex-row align-items-center">
                   <div class="">
-                    <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                    <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                   </div>
                   <span class="fs-sm16 fw-lighter">Berapa lama sebelumnya saya harus memesan kue ulang tahun?</span>
                 </div>
                 <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                   style="color: #5656be"></iconify-icon>
               </div>
-              <div class="faq-answer" :class="!open && 'close-faq'">
+              <div x-show="open" x-collapse.duration.1000ms>
                 <p class="fs-sm12 fw-lighter mt-3">Kami sarankan Anda memesan kue ulang tahun Anda setidaknya 2-3 minggu
                   sebelum tanggal acara untuk memastikan ketersediaan dan persiapan yang tepat.</p>
               </div>
             </div>
             <div class="d-flex flex-row justify-content-center" :class="more != 1?'d-none':''">
               <div class="cursor-pointer p-2 border-radius16" @click="more++">
-                <span class="text-secondary more">Show More</span>
+                <span class="text-primary more">Show More</span>
               </div>
             </div>
             <div class="d-flex flex-column row-gap-3" :class="more < 2?'d-none':''">
@@ -538,14 +544,14 @@
                 <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
                   <div class="d-flex flex-row align-items-center">
                     <div class="">
-                      <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                      <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                     </div>
                     <span class="fs-sm16 fw-lighter">Apakah Anda melakukan pengiriman?</span>
                   </div>
                   <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                     style="color: #5656be"></iconify-icon>
                 </div>
-                <div class="faq-answer" :class="!open && 'close-faq'">
+                <div x-show="open" x-collapse.duration.1000ms>
                   <p class="fs-sm12 fw-lighter mt-3"> Ya, kami menawarkan layanan pengiriman. Silakan berkomunikasi
                     dengan
                     kami untuk mengetahui wilayah cakupan dan biaya pengiriman. </p>
@@ -555,14 +561,14 @@
                 <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
                   <div class="d-flex flex-row align-items-center">
                     <div class="">
-                      <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                      <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                     </div>
                     <span class="fs-sm16 fw-lighter">Apa metode pembayaran yang dapat saya gunakan?</span>
                   </div>
                   <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                     style="color: #5656be"></iconify-icon>
                 </div>
-                <div class="faq-answer" :class="!open && 'close-faq'">
+                <div x-show="open" x-collapse.duration.1000ms>
                   <p class="fs-sm12 fw-lighter mt-3">Kami menerima pembayaran melalui tunai, transfer bank, dan metode
                     pembayaran lainnya. Semua detail pembayaran akan diberikan saat Anda memesan.</p>
                 </div>
@@ -571,14 +577,14 @@
                 <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
                   <div class="d-flex flex-row align-items-center">
                     <div class="">
-                      <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                      <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                     </div>
                     <span class="fs-sm16 fw-lighter">Apa kebijakan pembatalan dan pengembalian dana Ilra CakeArt?</span>
                   </div>
                   <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                     style="color: #5656be"></iconify-icon>
                 </div>
-                <div class="faq-answer" :class="!open && 'close-faq'">
+                <div x-show="open" x-collapse.duration.1000ms>
                   <p class="fs-sm12 fw-lighter mt-3">Pengembalian dana 50% akan diberikan untuk pembatalan pemesanan
                     yang
                     dilakukan paling lambat 7 hari sebelum tanggal pengiriman.</p>
@@ -588,14 +594,14 @@
                 <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
                   <div class="d-flex flex-row align-items-center">
                     <div class="">
-                      <div class="w-sm24 h-sm24 rounded-circle bg-secondary  me-3">_</div>
+                      <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                     </div>
                     <span class="fs-sm16 fw-lighter">Apa jaminan kualitas kue Ilra CakeArt?</span>
                   </div>
                   <iconify-icon :style="open? 'transform: rotate(90deg)':''" id="dd-faq" icon="ooui:previous-rtl"
                     style="color: #5656be"></iconify-icon>
                 </div>
-                <div class="faq-answer" :class="!open && 'close-faq'">
+                <div x-show="open" x-collapse.duration.1000ms>
                   <p class="fs-sm12 fw-lighter mt-3">Kami berkomitmen untuk memberikan kue ulang tahun berkualitas
                     tinggi
                     kepada pelanggan kami. Jika Anda memiliki masalah dengan pesanan Anda, silakan hubungi kami, dan
@@ -605,7 +611,7 @@
               </div>
               <div class="d-flex flex-row justify-content-center" :class="more > 2?'d-none':''">
                 <div class="cursor-pointer p-2 border-radius16" @click="more = 0">
-                  <span class="text-secondary more">Show Less</span>
+                  <span class="text-primary more">Show Less</span>
                 </div>
               </div>
             </div>
@@ -618,7 +624,7 @@
       <div class="why col-12 d-flex flex-column">
         <div class=" fs-sm20 fw-semibold mx-auto">
           Customers
-          <span class="text-secondary">Feedback</span>
+          <span class="text-primary">Feedback</span>
         </div>
         <div class="fs-9 text-center">
           <span>(From Google Reviews)</span>
@@ -731,7 +737,41 @@
       </div>
     </div>
   </div>
-  <footer class="mt-5 justify-content-center w-100 bg-footer text-white p-4 px-md-5">
+  <div x-data="products_data">
+    <template x-for="cake in products">
+      <!-- Modal -->
+      <div class="modal fade" :id="cake.id" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-s-md modal-s-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 x-text="cake.name" class="modal-title fs-sm24"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex flex-row">
+                <div class="col">
+                  <img :src="cake.imgPath" class="object-fit-cover rounded-3" height="240" width="240" draggable="false"
+                    alt="" srcset="">
+                </div>
+                <div class="col">
+                  <div x-text="cake.description" class="px-3 pb-2 fs-11 fw-semibold text-start">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <div class="d-flex flex-column p-3 ps-0 fs-12 fw-semibold text-price">
+                <span>Harga</span>
+                <div x-text="cake.price"></div>
+              </div>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+  <footer class="mt-5  justify-content-center w-100 bg-footer text-white p-4 px-md-5">
     <div class="container">
       <div class="footer-logo d-flex">
         <div class="text-nowrap d-flex flex-row">
@@ -767,15 +807,13 @@
           <span class="fw-semibold fs-sm16">Quick Links</span>
           <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
             <div>
-              <span @click="scrollTo('home')"
-                class="fw-semibold fs-sm12 p-2 cursor-pointer user-select-none">Home</span>
+              <span @click="scrollTo('home')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Home</span>
             </div>
             <div>
-              <span @click="scrollTo('products')"
-                class="fw-semibold fs-sm12 p-2 cursor-pointer user-select-none">Products</span>
+              <span @click="scrollTo('products')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Products</span>
             </div>
             <div>
-              <span @click="scrollTo('contact')" class="fw-semibold fs-sm12 p-2 cursor-pointer user-select-none">Contact
+              <span @click="scrollTo('contact')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Contact
                 Us</span>
             </div>
           </div>
@@ -791,7 +829,7 @@
         <div class="col-12 col-md footer-content">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.955587627656!2d112.72687687153471!3d-7.35887545613961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e582e840db4d%3A0x6244e6b3dbe90ddf!2sIlra%20CakeArt!5e0!3m2!1sid!2sid!4v1695957851731!5m2!1sid!2sid"
-            class="w-100 h-100" style="border:0;" allowfullscreen="" loading="lazy"
+            class="w-100 h-100 border border-0 border-radius16" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
