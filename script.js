@@ -167,10 +167,12 @@ window.addEventListener('scroll', () => {
 });
 
 function navbarColChange() {
-  if (window.scrollY >= 1)
+  if (window.scrollY >= 1) {
     navbar.classList.add('bg-white');
-  else
+  }
+  else {
     navbar.classList.remove('bg-white');
+  }
 }
 
 function sendToWhatsapp(_name = '', _message = '', btn = false) {
