@@ -1,6 +1,26 @@
 const navbar = document.getElementById('navbar');
 const endOfHero = document.getElementById('endOfHero');
 
+AOS.init();
+
+
+let swiper = new Swiper(".mySwiper", {
+  centeredSlides: true,
+  loop: true,
+  spaceBetween: 0,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    320: {
+      spaceBetween: 0
+    },
+    768: {
+      spaceBetween: 150
+    }
+  }
+});
 
 let cakes = {
   popularCakes: [
@@ -166,12 +186,13 @@ window.addEventListener('scroll', () => {
   navbarColChange();
 });
 
+
 function navbarColChange() {
   if (window.scrollY >= 1) {
-    navbar.classList.add('bg-white');
+    navbar?.classList.add('bg-white');
   }
   else {
-    navbar.classList.remove('bg-white');
+    navbar?.classList.remove('bg-white');
   }
 }
 
