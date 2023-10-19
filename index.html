@@ -96,12 +96,12 @@
     </div>
     <!-- Hero -->
     <div class="container user-select-none h-100" id="home">
-      <div class="swiper mySwiper d-flex justify-content-center mt-5">
-        <div class="swiper-wrapper vw-100">
-          <div class="row h-100 w-100 swiper-slide">
+      <div class="swiper mySwiper vh-md-100 d-flex justify-content-center mt-3 mt-md-0">
+        <div class="swiper-wrapper">
+          <div class="row mx-auto swiper-slide">
             <div class="col-12 col-md-6 order-md-last align-items-lg-end align-items-center d-flex justify-content-end">
               <div class="py-4">
-                <div class="mx-auto hero-imgs-wrap position-relative">
+                <div class="mx-auto position-relative">
                   <img src="hero.png" class="h-100 w-100" alt="" />
                 </div>
               </div>
@@ -132,7 +132,7 @@
               </div>
             </div>
           </div>
-          <div class="row h-100 w-100 swiper-slide">
+          <div class="row mx-auto swiper-slide">
             <div class="col-12 col-md-6 order-md-last align-items-lg-end align-items-center d-flex justify-content-end">
               <div class="py-4">
                 <div class="mx-auto hero-imgs-wrap position-relative">
@@ -162,7 +162,7 @@
               </div>
             </div>
           </div>
-          <div class="row h-100 w-100 swiper-slide">
+          <div class="row mx-auto swiper-slide">
             <div class="col-12 col-md-6 order-md-last align-items-lg-end align-items-center d-flex justify-content-end">
               <div class="py-4">
                 <div class="mx-auto hero-imgs-wrap position-relative">
@@ -210,7 +210,7 @@
       </div>
       <div class="about-text row mt-3">
         <div class="col-12 col-lg-4">
-          <img class="w-100 h-auto" src="gallery.png" alt="" srcset="">
+          <img class="w-100 h-" src="gallery.png" alt="" srcset="">
         </div>
         <div class="col-12 col-lg-8 p-4">
           <div class="px-2" data-aos="fade-up">
@@ -851,22 +851,27 @@
 
     AOS.init();
 
-
     let swiper = new Swiper(".mySwiper", {
       centeredSlides: true,
       loop: true,
       spaceBetween: 0,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 5000,
+      //   disableOnInteraction: false,
+      // },
       breakpoints: {
-        320: {
-          spaceBetween: 0
-        },
-        768: {
-          spaceBetween: 150
-        }
+        // 320: {
+        //   spaceBetween: 0
+        // },
+        // 425: {
+        //   spaceBetween: 50
+        // },
+        // 575: {
+        //   spaceBetween: 500
+        // },
+        // 768: {
+        //   spaceBetween: 150
+        // }
       }
     });
   </script>
