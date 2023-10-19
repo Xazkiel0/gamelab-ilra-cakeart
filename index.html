@@ -848,6 +848,27 @@
   </footer>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+
+    AOS.init();
+
+
+    let swiper = new Swiper(".mySwiper", {
+      centeredSlides: true,
+      loop: true,
+      spaceBetween: 0,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        320: {
+          spaceBetween: 0
+        },
+        768: {
+          spaceBetween: 150
+        }
+      }
+    });
   </script>
   <script src="script.js"></script>
 
