@@ -95,7 +95,7 @@
       </div>
     </div>
     <!-- Hero -->
-    <div class="container user-select-none h-100" id="home">
+    <div class="container user-select-none" id="home">
       <div class="swiper mySwiper vh-md-100 d-flex justify-content-center mt-3 mt-md-0">
         <div class="swiper-wrapper">
           <div class="row mx-auto swiper-slide">
@@ -198,7 +198,7 @@
     </div>
     <div id="endOfHero"></div>
   </div>
-  <div class="main container text-base vw-100  overflow-x-hidden position-relative">
+  <div class="main container text-base vw-100">
     <!-- About -->
     <div id="about"></div>
     <div class="row mt-5 justify-content-center" data-aos="zoom-in">
@@ -371,10 +371,10 @@
         </div>
       </div>
       <div class="row mt-5 justify-content-center p-3 gap-2">
-        <div class="col-4">
+        <div class="col-4" data-bs-toggle="modal" data-bs-target="#cert1" data-aos="fade-left" data-aos-duration="500">
           <img class="shadow-base w-100" src="halal-cert.png" alt="" srcset="">
         </div>
-        <div class="col-4">
+        <div class="col-4" data-bs-toggle="modal" data-bs-target="#cert2" data-aos="fade-left" data-aos-duration="800">
           <img class="shadow-base w-100" src="halal-cert2.png" alt="" srcset="">
         </div>
       </div>
@@ -389,7 +389,7 @@
           <!-- 1-4 -->
           <div class="faq-row border p-3" x-data="{open:true}" data-aos="fade-left" data-aos-duration="500">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-              <div class="d-flex flex-row align-items-center">
+              <div class="d-flex flex-row align-items-center pe-1">
                 <div class="">
                   <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                 </div>
@@ -407,7 +407,7 @@
           </div>
           <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="800">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-              <div class="d-flex flex-row align-items-center">
+              <div class="d-flex flex-row align-items-center pe-1">
                 <div class="">
                   <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                 </div>
@@ -425,7 +425,7 @@
           </div>
           <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1100">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-              <div class="d-flex flex-row align-items-center">
+              <div class="d-flex flex-row align-items-center pe-1">
                 <div class="">
                   <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                 </div>
@@ -444,7 +444,7 @@
           </div>
           <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1100">
             <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-              <div class="d-flex flex-row align-items-center">
+              <div class="d-flex flex-row align-items-center pe-1">
                 <div class="">
                   <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                 </div>
@@ -468,7 +468,7 @@
           <div class="d-flex flex-column row-gap-3" :class="more < 1 ?'d-none':''">
             <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
               <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-                <div class="d-flex flex-row align-items-center">
+                <div class="d-flex flex-row align-items-center pe-1">
                   <div class="">
                     <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                   </div>
@@ -486,7 +486,7 @@
             </div>
             <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
               <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-                <div class="d-flex flex-row align-items-center">
+                <div class="d-flex flex-row align-items-center pe-1">
                   <div class="">
                     <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                   </div>
@@ -503,7 +503,7 @@
             </div>
             <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
               <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-                <div class="d-flex flex-row align-items-center">
+                <div class="d-flex flex-row align-items-center pe-1">
                   <div class="">
                     <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                   </div>
@@ -519,9 +519,9 @@
             </div>
             <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
               <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-                <div class="d-flex flex-row align-items-center">
+                <div class="d-flex flex-row align-items-center pe-1">
                   <div class="">
-                    <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
+                    <div class="w-sm24 h-sm24 rounded-circle bg-primary me-3">_</div>
                   </div>
                   <span class="fs-sm16 fw-lighter">Berapa lama sebelumnya saya harus memesan kue ulang tahun?</span>
                 </div>
@@ -542,7 +542,7 @@
               <!-- 8-12 -->
               <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
                 <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-                  <div class="d-flex flex-row align-items-center">
+                  <div class="d-flex flex-row align-items-center pe-1">
                     <div class="">
                       <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                     </div>
@@ -559,7 +559,7 @@
               </div>
               <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
                 <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-                  <div class="d-flex flex-row align-items-center">
+                  <div class="d-flex flex-row align-items-center pe-1">
                     <div class="">
                       <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                     </div>
@@ -575,7 +575,7 @@
               </div>
               <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
                 <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-                  <div class="d-flex flex-row align-items-center">
+                  <div class="d-flex flex-row align-items-center pe-1">
                     <div class="">
                       <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                     </div>
@@ -592,7 +592,7 @@
               </div>
               <div class="faq-row border p-3" x-data="{open:false}" data-aos="fade-left" data-aos-duration="1400">
                 <div class="d-flex flex-row align-items-center justify-content-between" @click="open = !open">
-                  <div class="d-flex flex-row align-items-center">
+                  <div class="d-flex flex-row align-items-center pe-1">
                     <div class="">
                       <div class="w-sm24 h-sm24 rounded-circle bg-primary  me-3">_</div>
                     </div>
@@ -635,7 +635,7 @@
           <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="500">
             <div class="d-flex flex-row align-items-center">
               <div class="avatar-user border">
-                <img class="w-100 h-auto" src="risa-anna.png" alt="" srcset="">
+                <img class="w-100 h-auto" src="https://gamelab-ilra-cakeart.vercel.app/risa-anna.png" alt="" srcset="">
               </div>
               <div class="name ms-2">
                 <span class="fw-light">Risa Anna</span>
@@ -643,11 +643,11 @@
             </div>
             <div class="py-1">
               <div class="stars py-1">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
               </div>
               <p class="fs-sm12">Thankyou Ilra Cake Art yg sudah membuat birthday adekku jadi spesial sekali. Cake
                 custom designnya keren, kuenya lembut, manisnya pas, BUTTER CREAMnya ngga eneg</p>
@@ -656,7 +656,8 @@
           <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="800">
             <div class="d-flex flex-row align-items-center">
               <div class="avatar-user border">
-                <img class="w-100 h-auto" src="tia-saraswati.png" alt="" srcset="">
+                <img class="w-100 h-auto" src="https://gamelab-ilra-cakeart.vercel.app/tia-saraswati.png" alt=""
+                  srcset="">
               </div>
               <div class="name ms-2">
                 <span class="fw-light">Tia Saraswati</span>
@@ -664,11 +665,11 @@
             </div>
             <div class="py-1">
               <div class="stars py-1">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
               </div>
               <p class="fs-sm12">Tekstur cakenya yg lembut, nyes, dan nggak terlalu manis..nggak seret di lidah.
                 Lapisan
@@ -680,7 +681,8 @@
           <div class="card-feedback col-12 p-4" data-aos="fade-left" data-aos-duration="1100">
             <div class="d-flex flex-row align-items-center">
               <div class="avatar-user border">
-                <img class="w-100 h-auto" src="oktavia-agustin.png" alt="" srcset="">
+                <img class="w-100 h-auto" src="https://gamelab-ilra-cakeart.vercel.app/oktavia-agustin.png" alt=""
+                  srcset="">
               </div>
               <div class="name ms-2">
                 <span class="fw-light">Oktavia Agustin</span>
@@ -688,11 +690,11 @@
             </div>
             <div class="py-1">
               <div class="stars py-1">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
-                <img src="star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
+                <img src="https://gamelab-ilra-cakeart.vercel.app/star.svg" alt="">
               </div>
               <p class="fs-sm12">Syukron jazakillahu khayr Ilra CakeArt 🙏🙏 kuenya cantik,, enak, lembut, manisnya
                 pas,
@@ -771,6 +773,26 @@
       </div>
     </template>
   </div>
+
+  <!-- Certificate Modals -->
+
+  <div class="modal fade" id="cert1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-s-md modal-s-lg">
+      <div class="modal-content row">
+        <img class="shadow-base w-100" data-bs-dismiss="modal"
+          src="https://gamelab-ilra-cakeart.vercel.app/halal-cert.png" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="cert2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-s-md modal-s-lg">
+      <div class="modal-content row">
+        <img class="shadow-base w-100" data-bs-dismiss="modal"
+          src="https://gamelab-ilra-cakeart.vercel.app/halal-cert2.png" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
   <footer class="mt-5  justify-content-center w-100 bg-footer text-white p-4 px-md-5">
     <div class="container">
       <div class="footer-logo d-flex">
@@ -855,24 +877,11 @@
       centeredSlides: true,
       loop: true,
       spaceBetween: 0,
-      // autoplay: {
-      //   delay: 5000,
-      //   disableOnInteraction: false,
-      // },
-      breakpoints: {
-        // 320: {
-        //   spaceBetween: 0
-        // },
-        // 425: {
-        //   spaceBetween: 50
-        // },
-        // 575: {
-        //   spaceBetween: 500
-        // },
-        // 768: {
-        //   spaceBetween: 150
-        // }
-      }
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+
     });
   </script>
   <script src="script.js"></script>
