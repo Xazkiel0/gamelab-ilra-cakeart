@@ -1,3 +1,25 @@
+AOS.init();
+
+function sendToWhatsapp(_name = '', _message = '', btn = false) {
+  var baseUrl = 'https://api.whatsapp.com/send/?phone=6281357749593';
+  let waMsg = '&text=Permisi, Nama: ' + _name + 'Pesan:' + _message;
+  let urlText = encodeURIComponent(waMsg);
+
+  let finalURL = !btn ? baseUrl + urlText : baseUrl;
+
+  window.open(finalURL, '_blank');
+}
+
+let swiper = new Swiper(".mySwiper", {
+  centeredSlides: true,
+  loop: true,
+  spaceBetween: 0,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  }
+});
+
 const navbar = document.getElementById('navbar');
 const endOfHero = document.getElementById('endOfHero');
 
@@ -140,6 +162,7 @@ let cakes = {
   noCakes: [],
 }
 
+
 document.addEventListener('alpine:init', () => {
   Alpine.data('products_data', () => ({
     products: cakes.popularCakes,
@@ -176,12 +199,10 @@ function navbarColChange() {
   }
 }
 
-function sendToWhatsapp(_name = '', _message = '', btn = false) {
-  var baseUrl = 'https://api.whatsapp.com/send/?phone=6281357749593';
-  let waMsg = '&text=Permisi, Nama: ' + _name + 'Pesan:' + _message;
-  let urlText = encodeURIComponent(waMsg);
+function scrollTo(_el) {
+  const el = document.getElementById(String(_el).toLowerCase());
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+  }
 
-  let finalURL = !btn ? baseUrl + urlText : baseUrl;
-
-  window.open(finalURL, '_blank');
 }
