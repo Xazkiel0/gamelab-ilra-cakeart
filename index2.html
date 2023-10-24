@@ -23,8 +23,8 @@
 
 
   <!-- Own -->
-  <link rel="stylesheet" href="https://gamelab-ilra-cakeart.vercel.app/styles2.css" />
-  <!-- <link rel="stylesheet" href="styles2.css" /> -->
+  <!-- <link rel="stylesheet" href="https://gamelab-ilra-cakeart.vercel.app/styles2.css" /> -->
+  <link rel="stylesheet" href="styles2.css" />
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
@@ -43,7 +43,7 @@
           class="container-lg navigation align-content-center d-flex justify-content-between align-items-center user-select-none">
           <a class="fw-bolder text-base fs-sm24 text-nowrap" @click="location.reload('/index.html')">Ilra
             CakeArt</a>
-          <div class="" id="">
+          <div>
             <div class="d-none d-sm-flex">
               <div @click="scrollTo('home')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
                 Home
@@ -60,7 +60,7 @@
             </div>
           </div>
           <div class="d-none d-md-block">
-            <div class="btn-primary d-flex p-1 px-2 gap-1 cursor-pointer user-select-none"
+            <div class="btn-cust-primary d-flex p-1 px-2 gap-1 cursor-pointer user-select-none"
               @click="sendToWhatsapp('','',true)">
               <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
               <span class="fs-sm16 text-center fw-bolder"> Pesan Sekarang </span>
@@ -118,11 +118,11 @@
                   kue istimewa untuk momen
                   bahagia dengan keluarga</span>
                 <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                  <div class="btn-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
+                  <div class="btn-cust-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
                     Get Started
                   </div>
                   <div class="d-none d-sm-block d-md-none">
-                    <div class="btn-primary d-flex p-1 px-2 row-gap-1 cursor-pointer"
+                    <div class="btn-cust-primary d-flex p-1 px-2 row-gap-1 cursor-pointer"
                       @click="sendToWhatsapp('','',true)">
                       <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
                       <span class="fs-sm16 text-center fw-bolder">
@@ -148,11 +148,11 @@
                 <span class="fs-sm16 fw-semibold">Bersama keluarga, lengkapi momen berharga dengan kue lezat kami.
                   Buatlah setiap momen terasa istimewa dengan rasa yang nikmat.</span>
                 <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                  <div class="btn-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
+                  <div class="btn-cust-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
                     Get Started
                   </div>
                   <div class="d-none d-sm-block d-md-none">
-                    <div class="btn-primary d-flex p-1 px-2 row-gap-1 cursor-pointer"
+                    <div class="btn-cust-primary d-flex p-1 px-2 row-gap-1 cursor-pointer"
                       @click="sendToWhatsapp('','',true)">
                       <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
                       <span class="fs-sm16 text-center fw-bolder">
@@ -179,11 +179,11 @@
                 <span class="fs-sm16 fw-semibold">Setiap momen akan lebih terasa istimewa dengan kue sehat yang dibuat
                   dengan penuh cinta</span>
                 <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                  <div class="btn-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
+                  <div class="btn-cust-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
                     Get Started
                   </div>
                   <div class="d-none d-sm-block d-md-none">
-                    <div class="btn-primary d-flex p-1 px-2 row-gap-1 cursor-pointer"
+                    <div class="btn-cust-primary d-flex p-1 px-2 row-gap-1 cursor-pointer"
                       @click="sendToWhatsapp('','',true)">
                       <iconify-icon width="24" icon="ic:baseline-whatsapp"></iconify-icon>
                       <span class="fs-sm16 text-center fw-bolder">
@@ -718,7 +718,7 @@
             style="min-height: 200px; max-height: 270px;" type="text" x-model="message"></textarea>
         </div>
         <div class="row justify-content-center">
-          <div class="btn-primary text-base mt-3 text-white d-inline-block p-2 px-2"
+          <div class="btn-cust-primary text-base mt-3 text-white d-inline-block p-2 px-2"
             @click="sendToWhatsapp(name,message)">
             <div class="d-flex align-items-center">
               <iconify-icon icon="fa:paper-plane" width="20"></iconify-icon>
@@ -745,7 +745,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 x-text="cake.name" class="modal-title fs-sm24"></h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-cust-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="d-flex flex-column flex-sm-row gap-3">
@@ -764,7 +764,7 @@
                 <span>Harga</span>
                 <div x-text="cake.price"></div>
               </div>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-cust-primary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

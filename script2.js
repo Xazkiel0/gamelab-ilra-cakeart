@@ -1,11 +1,12 @@
 AOS.init();
 
 function sendToWhatsapp(_name = '', _message = '', btn = false) {
-  var baseUrl = 'https://api.whatsapp.com/send/?phone=6281357749593';
+  var chatUrl = 'https://api.whatsapp.com/send/?phone=6281357749593';
   let waMsg = '&text=Permisi, Nama: ' + _name + 'Pesan:' + _message;
   let urlText = encodeURIComponent(waMsg);
+  let catalogUrl = 'https://wa.me/c/6281357749593'
 
-  let finalURL = !btn ? baseUrl + urlText : baseUrl;
+  let finalURL = !btn ? chatUrl + urlText : catalogUrl;
 
   window.open(finalURL, '_blank');
 }
