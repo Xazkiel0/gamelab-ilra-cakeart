@@ -102,6 +102,10 @@ body {
   margin-top: 20px;
 }
 
+.navbar-wrapper {
+  height: 64px;
+}
+
 .bg-hero {
   background-image: linear-gradient(
     237deg,
@@ -262,8 +266,7 @@ body {
 }
 
 .hero {
-  /* max-height: 100vh !important; */
-  overflow: initial !important;
+  overflow: initial;
 }
 
 .card-feedback {

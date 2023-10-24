@@ -14,10 +14,10 @@ let swiper = new Swiper(".mySwiper", {
   centeredSlides: true,
   loop: true,
   spaceBetween: 0,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  }
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  // }
 });
 
 const navbar = document.getElementById('navbar');
