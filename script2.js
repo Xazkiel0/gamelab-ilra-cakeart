@@ -11,6 +11,24 @@ function sendToWhatsapp(_name = '', _message = '', btn = false) {
   window.open(finalURL, '_blank');
 }
 
+var contact_img = document.getElementById('contact-img');
+var circle1 = document.getElementById('circle1');
+var circle2 = document.getElementById('circle2');
+new simpleParallax(contact_img, {
+  orientation: 'right',
+  overflow: true,
+});
+new simpleParallax(circle2, {
+  orientation: 'up right',
+  overflow: true,
+});
+new simpleParallax(circle2, {
+  orientation: 'left',
+  overflow: true,
+});
+
+
+
 let swiper = new Swiper(".mySwiper", {
   centeredSlides: true,
   loop: true,

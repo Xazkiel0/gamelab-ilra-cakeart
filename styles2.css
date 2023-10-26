@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 :root {
   /* --primary-color: #4daf98; */
   --primary-color: #5656be;
@@ -11,6 +13,15 @@
 
 body {
   font-family: "Poppins", sans-serif !important;
+}
+.main {
+  background-image: url("sprinkles-off-white-wallpaper-removebg-preview.png");
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  /* background-size: cover; */
 }
 
 @media (min-width: 992px) {
@@ -103,7 +114,7 @@ body {
 }
 
 .navbar-wrapper {
-  height: 64px;
+  height: 72px;
 }
 
 .bg-hero {
@@ -319,7 +330,7 @@ body {
   top: -120px;
   left: -260px;
   filter: blur(160px);
-  background: #95e2d0;
+  /* background: #95e2d0; */
   z-index: -2;
 }
 .circle-blur2 {
@@ -329,7 +340,7 @@ body {
   right: 1px;
   position: absolute;
   z-index: -2;
-  background: #eea6b7;
+  /* background: #eea6b7; */
   filter: blur(160px);
 }
 /* .slider-container .off {
@@ -385,6 +396,7 @@ body {
   max-width: 240px;
   min-height: 350px;
   border-radius: 15px;
+  background-color: white;
 }
 
 .message-chatbox {
@@ -642,6 +654,7 @@ body {
   transition: height 0.5s ease-in-out;
   max-width: 700px;
   border-radius: 12px;
+  background-color: white;
 }
 .h-4 {
   width: 4px !important;

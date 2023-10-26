@@ -12,12 +12,11 @@
     crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" />
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
+  <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -33,8 +32,8 @@
   <!--Awal Navbar dan Hero-->
   <div class="text-base d-block hero h-auto vh-md-100 position-relative overflow-hidden" x-data="{mobileNav:false}">
     <div class="overflow-hidden">
-      <div class="circle-blur1"></div>
-      <div class="circle-blur2 d-none d-lg-block"></div>
+      <img id="circle1" class="circle-blur1" src="circle1.png" alt="" srcset="">
+      <img id="circle2" class="circle-blur2 d-none d-lg-block" src="circle2.png">
     </div>
     <!-- Navbar -->
     <div class="overflow-x-hidden position-relative navbar-wrapper">
@@ -201,10 +200,10 @@
     <div id="endOfHero"></div>
   </div>
   <!--Akhir Navbar dan Hero-->
-  <div class="main container text-base vw-100">
+  <div class="main container text-base vw-100 py-5">
     <!-- About -->
     <div id="about"></div>
-    <div class="row mt-5 justify-content-center" data-aos="zoom-in">
+    <div class="row mt-5 justify-content-center bg-white py-4" data-aos="zoom-in">
       <div class="about col-12 d-flex" data-aos="fade-up">
         <div class=" fs-sm20 fw-semibold mx-auto">
           What is
@@ -359,10 +358,10 @@
           What we have made
         </div>
       </div>
-      <div class="row mt-5 justify-content-center">
+      <div class="row mt-5 justify-content-center p-5 bg-white">
         <div class="col-12 col-md-3 d-flex flex-column text-center" data-aos="fade-left" data-aos-duration="500">
           <span class="fs-lg60 fw-bolder text-primary">2+</span>
-          <span class="fw-bold text-base opacity-75">Years Experience</span>
+          <span class="fw-bold text-base opacity-75">Years of Experience</span>
         </div>
         <div class="col-12 col-md-3 d-flex flex-column text-center" data-aos="fade-left" data-aos-duration="800">
           <span class="fs-lg60 fw-bolder text-tertiary">10+</span>
@@ -718,7 +717,7 @@
             style="min-height: 200px; max-height: 270px;" type="text" x-model="message"></textarea>
         </div>
         <div class="row justify-content-center">
-          <div class="btn-cust-primary text-base mt-3 text-white d-inline-block p-2 px-2"
+          <div class="btn-cust-primary bg-white text-base mt-3 text-white d-inline-block p-2 px-2"
             @click="sendToWhatsapp(name,message)">
             <div class="d-flex align-items-center">
               <iconify-icon icon="fa:paper-plane" width="20"></iconify-icon>
@@ -730,11 +729,10 @@
         </div>
       </div>
       <div class="col-md-6 col-12 px-5 d-flex align-items-center justify-content-center order-0 order-md-2">
-        <img src="https://gamelab-ilra-cakeart.vercel.app/contact-us-img2.png" class="w-100 w-lg-75" alt="" srcset="">
+        <img id="contact-img" src="https://gamelab-ilra-cakeart.vercel.app/contact-us-img2.png" class="w-100 w-lg-75"
+          alt="" srcset="">
       </div>
     </div>
-
-
   </div>
   <!--Modals-->
   <div x-data="products_data">
@@ -772,7 +770,7 @@
     </template>
   </div>
   <!-- Footer -->
-  <footer class="mt-5  justify-content-center w-100 bg-footer text-white p-4 px-md-5">
+  <footer class="justify-content-center w-100 bg-footer text-white p-4 px-md-5">
     <div class="container">
       <div class="footer-logo d-flex">
         <div class="text-nowrap d-flex flex-row">
@@ -785,7 +783,7 @@
       </div>
       <div class="row mt-4 row-gap-3 row-gap-md-5">
         <div class="col-12 col-md col-sm-6 footer-content">
-          <span class="fw-semibold fs-sm16">Contact Us</span>
+          <span class="fw-semibold fs-sm16">Ikuti Kami</span>
           <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
             <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
               href="https://api.whatsapp.com/send/?phone=6281357749593">
@@ -805,10 +803,13 @@
           </div>
         </div>
         <div class="col-12 col-md col-sm-6 footer-content">
-          <span class="fw-semibold fs-sm16">Quick Links</span>
+          <span class="fw-semibold fs-sm16">Jelajahi IlraCake</span>
           <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
             <div>
               <span @click="scrollTo('home')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Home</span>
+            </div>
+            <div>
+              <span @click="scrollTo('about')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">About</span>
             </div>
             <div>
               <span @click="scrollTo('products')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Products</span>
@@ -820,7 +821,7 @@
           </div>
         </div>
         <div class="col-12 col-md footer-content">
-          <span class="fw-semibold fs-sm16">Address</span>
+          <span class="fw-semibold fs-sm16">Alamat</span>
           <div class="address">
             <span class="mt-2 fs-11">
               Jl. Jend. S. Parman 7, Kec. Waru, Kabupaten Sidoarjo, Jawa Timur 61256, Indonesia.
