@@ -187,6 +187,7 @@ body {
 .inactive-product-switch {
   border: 3px solid var(--primary-color) !important;
   color: var(--primary-color) !important;
+  background-color: white;
 }
 .active-product-switch {
   border: 3px solid var(--primary-color) !important;
