@@ -11,9 +11,17 @@
   --border-base-color: #9cd8ca;
 }
 
+.bg-glass {
+  background: rgba(255, 255, 255, 0.466);
+  backdrop-filter: blur(6px);
+  box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.116);
+  border-radius: 20px;
+}
+
 body {
   font-family: "Poppins", sans-serif !important;
 }
+
 .main {
   background-image: url("sprinkles-off-white-wallpaper-removebg-preview.png");
 
@@ -139,7 +147,8 @@ body {
   justify-items: center;
 }
 .bg-footer {
-  background: #4daf98;
+  background: rgba(77, 175, 152, 0.753);
+  backdrop-filter: blur(6px);
 }
 .bg-primary {
   background: var(--primary-color) !important;

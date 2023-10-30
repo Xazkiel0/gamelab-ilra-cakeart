@@ -301,14 +301,14 @@
       </div>
       <!-- Products -->
       <div id="products"></div>
-      <div class="row mt-5 justify-content-center" data-aos="zoom-in">
+      <div class="row bg-glass p-5 mt-5 justify-content-center" data-aos="zoom-in">
         <div class="why d-flex">
           <div class=" fs-sm20 fw-semibold mx-auto">
             Our
             <span class="text-primary">Products</span>
           </div>
         </div>
-        <div class="row mt-5" x-data="products_data">
+        <div class="row py-5" x-data="products_data">
           <ul class="nav nav-pills mb-3 justify-content-center gap-2" role="tablist">
             <li class="nav-item" role="presentation" data-aos="fade-left" data-aos-duration="400">
               <button class="nav-link text-white" type="button" role="tab" :class="switchBtn('popularCakes')"
@@ -378,7 +378,7 @@
         </div>
       </div>
       <!-- FAQ -->
-      <div class="row mt-5 justify-content-center text-base" data-aos="zoom-in" x-data="{more:0}">
+      <div class="row bg-glass p-5 mt-5 justify-content-center text-base" data-aos="zoom-in" x-data="{more:0}">
         <div class="col-12 d-flex flex-column justify-content-center">
           <div class="why fs-sm20 fw-semibold mx-auto">
             <span class="text-primary">Frequently Asked Question</span>
@@ -742,6 +742,85 @@
         </div>
       </div>
     </div>
+    <!-- Footer -->
+    <footer class="justify-content-center w-100 bg-footer text-white p-4 px-md-5">
+      <div class="container">
+        <div class="footer-logo d-flex">
+          <div class="text-nowrap d-flex flex-row">
+            <span class="fs-sm24 fw-semibold px-3">
+              Ilra CakeArt
+            </span>
+            <div class="h-100 border border-base border-1 border-radius16"></div>
+            <span class="fw-semibold fs-sm12 px-3 text-nowrap">Customize your <br> cake</span>
+          </div>
+        </div>
+        <div class="row mt-4 row-gap-3 row-gap-md-5">
+          <div class="col-12 col-md col-sm-6 footer-content">
+            <span class="fw-semibold fs-sm16">Ikuti Kami</span>
+            <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
+              <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
+                href="https://api.whatsapp.com/send/?phone=6281357749593">
+                <iconify-icon icon="ic:baseline-whatsapp" style="color: white;" width="24"></iconify-icon>
+                <span class="fw-semibold fs-sm12">WhatsApp</span>
+              </a>
+              <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
+                href="https://www.instagram.com/arumbudi_ilra/">
+                <iconify-icon icon="mdi:instagram" style="color: white;" width="24"></iconify-icon>
+                <span class="fw-semibold fs-sm12">Instagram</span>
+              </a>
+              <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
+                href="mailto:arumbudi@gmail.com">
+                <iconify-icon icon="eva:email-outline" style="color: white;" width="24"></iconify-icon>
+                <span class="fw-semibold fs-sm12">Email</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md col-sm-6 footer-content">
+            <span class="fw-semibold fs-sm16">Jelajahi IlraCake</span>
+            <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
+              <div>
+                <span @click="scrollTo('home')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Home</span>
+              </div>
+              <div>
+                <span @click="scrollTo('about')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">About</span>
+              </div>
+              <div>
+                <span @click="scrollTo('products')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Products</span>
+              </div>
+              <div>
+                <span @click="scrollTo('contact')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Contact
+                  Us</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md footer-content">
+            <span class="fw-semibold fs-sm16">Alamat</span>
+            <div class="address">
+              <span class="mt-2 fs-11">
+                Jl. Jend. S. Parman 7, Kec. Waru, Kabupaten Sidoarjo, Jawa Timur 61256, Indonesia.
+              </span>
+            </div>
+          </div>
+          <div class="col-12 col-md footer-content">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.955587627656!2d112.72687687153471!3d-7.35887a545613961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e582e840db4d%3A0x6244e6b3dbe90ddf!2sIlra%20CakeArt!5e0!3m2!1sid!2sid!4v1695957851731!5m2!1sid!2sid"
+              class="w-100 h-100 border border-0 border-radius16" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div
+            class="border-top border-base pt-3 copyright fs-9 text-center d-flex flex-column flex-md-row justify-content-center">
+            <span class="">© 2023 Reserved by Muhammad Sayidul Ikhsan Ulya
+            </span>
+            <span class="border-start mx-1"></span>
+            <span>
+              Powered by Gamelab.id
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
   <!--Modals-->
   <div x-data="products_data">
@@ -778,85 +857,6 @@
       </div>
     </template>
   </div>
-  <!-- Footer -->
-  <footer class="justify-content-center w-100 bg-footer text-white p-4 px-md-5">
-    <div class="container">
-      <div class="footer-logo d-flex">
-        <div class="text-nowrap d-flex flex-row">
-          <span class="fs-sm24 fw-semibold px-3">
-            Ilra CakeArt
-          </span>
-          <div class="h-100 border border-base border-1 border-radius16"></div>
-          <span class="fw-semibold fs-sm12 px-3 text-nowrap">Customize your <br> cake</span>
-        </div>
-      </div>
-      <div class="row mt-4 row-gap-3 row-gap-md-5">
-        <div class="col-12 col-md col-sm-6 footer-content">
-          <span class="fw-semibold fs-sm16">Ikuti Kami</span>
-          <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
-            <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
-              href="https://api.whatsapp.com/send/?phone=6281357749593">
-              <iconify-icon icon="ic:baseline-whatsapp" style="color: white;" width="24"></iconify-icon>
-              <span class="fw-semibold fs-sm12">WhatsApp</span>
-            </a>
-            <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
-              href="https://www.instagram.com/arumbudi_ilra/">
-              <iconify-icon icon="mdi:instagram" style="color: white;" width="24"></iconify-icon>
-              <span class="fw-semibold fs-sm12">Instagram</span>
-            </a>
-            <a class="d-flex align-items-center gap-2 cursor-pointer text-decoration-none text-white"
-              href="mailto:arumbudi@gmail.com">
-              <iconify-icon icon="eva:email-outline" style="color: white;" width="24"></iconify-icon>
-              <span class="fw-semibold fs-sm12">Email</span>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-md col-sm-6 footer-content">
-          <span class="fw-semibold fs-sm16">Jelajahi IlraCake</span>
-          <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
-            <div>
-              <span @click="scrollTo('home')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Home</span>
-            </div>
-            <div>
-              <span @click="scrollTo('about')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">About</span>
-            </div>
-            <div>
-              <span @click="scrollTo('products')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Products</span>
-            </div>
-            <div>
-              <span @click="scrollTo('contact')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Contact
-                Us</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md footer-content">
-          <span class="fw-semibold fs-sm16">Alamat</span>
-          <div class="address">
-            <span class="mt-2 fs-11">
-              Jl. Jend. S. Parman 7, Kec. Waru, Kabupaten Sidoarjo, Jawa Timur 61256, Indonesia.
-            </span>
-          </div>
-        </div>
-        <div class="col-12 col-md footer-content">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.955587627656!2d112.72687687153471!3d-7.35887a545613961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e582e840db4d%3A0x6244e6b3dbe90ddf!2sIlra%20CakeArt!5e0!3m2!1sid!2sid!4v1695957851731!5m2!1sid!2sid"
-            class="w-100 h-100 border border-0 border-radius16" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div
-          class="border-top border-base pt-3 copyright fs-9 text-center d-flex flex-column flex-md-row justify-content-center">
-          <span class="">© 2023 Reserved by Muhammad Sayidul Ikhsan Ulya
-          </span>
-          <span class="border-start mx-1"></span>
-          <span>
-            Powered by Gamelab.id
-          </span>
-        </div>
-      </div>
-    </div>
-  </footer>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script2.js"></script>
 </body>
