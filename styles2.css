@@ -310,6 +310,7 @@ body {
   display: inline-block;
   width: auto;
   color: var(--text-color);
+  cursor: pointer;
 }
 .btn-cust-secondary {
   border-radius: 90px;
@@ -317,6 +318,7 @@ body {
   background: var(--primary-color);
   display: inline-block;
   width: auto;
+  cursor: pointer;
 }
 
 .hero-img-wrap {

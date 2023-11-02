@@ -1,8 +1,8 @@
 AOS.init();
 
 function sendToWhatsapp(_name = '', _message = '', btn = false) {
-  var chatUrl = 'https://api.whatsapp.com/send/?phone=6281357749593';
-  let waMsg = '&text=Permisi, Nama: ' + _name + 'Pesan:' + _message;
+  var chatUrl = 'https://api.whatsapp.com/send/?phone=6281357749593&text=';
+  let waMsg = 'Permisi, Nama: ' + _name + ' Pesan:' + _message;
   let urlText = encodeURIComponent(waMsg);
   let catalogUrl = 'https://wa.me/c/6281357749593'
 
@@ -11,32 +11,15 @@ function sendToWhatsapp(_name = '', _message = '', btn = false) {
   window.open(finalURL, '_blank');
 }
 
-var contact_img = document.getElementById('contact-img');
-var circle1 = document.getElementById('circle1');
-var circle2 = document.getElementById('circle2');
-new simpleParallax(contact_img, {
-  orientation: 'right',
-  overflow: true,
-});
-new simpleParallax(circle2, {
-  orientation: 'up right',
-  overflow: true,
-});
-new simpleParallax(circle2, {
-  orientation: 'left',
-  overflow: true,
-});
-
-
 
 let swiper = new Swiper(".mySwiper", {
   centeredSlides: true,
   loop: true,
   spaceBetween: 0,
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // }
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  }
 });
 
 const navbar = document.getElementById('navbar');
@@ -101,22 +84,6 @@ let cakes = {
       price: 'Rp. 150.000,00',
       categories: ['Fresh', 'Nature'],
     },
-    // {
-    // id:'',
-    //   imgPath: 'https://gamelab-ilra-cakeart.vercel.app/all_cakes/9.jpeg',
-    //   name: 'Beach-themed Cake',
-    //   description: 'kue yang dihias dengan tema pantai. Kue ini biasanya dibuat dengan warna-warna cerah yang menggambarkan suasana pantai.',
-    //   price: 'Rp. 200.000,00',
-    // categories: [],
-    // },
-    // {
-    // id:'',
-    //   imgPath: 'https://gamelab-ilra-cakeart.vercel.app/all_cakes/10.jpeg',
-    //   name: 'Flower Cake',
-    //   description: 'kue dengan hiasan berbagai macam bentuk dan warna bunga dengan tampilan cantik dan elegan.',
-    //   price: 'Rp. 200.000,00',
-    // categories: [],
-    // },
   ],
   kidCakes: [
     {
@@ -218,10 +185,14 @@ function navbarColChange() {
   }
 }
 
-function scrollTo(_el) {
+function name(par) {
+  console.log(par);
+}
+
+function scrollToSection(_el) {
   const el = document.getElementById(String(_el).toLowerCase());
   if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
   }
 
 }

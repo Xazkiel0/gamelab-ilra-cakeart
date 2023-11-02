@@ -45,16 +45,16 @@
             CakeArt</a>
           <div>
             <div class="d-none d-sm-flex">
-              <div @click="scrollTo('home')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
+              <div @click="scrollToSection('home')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
                 Home
               </div>
-              <div @click="scrollTo('about')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
+              <div @click="scrollToSection('about')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
                 About Us
               </div>
-              <div @click="scrollTo('products')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
+              <div @click="scrollToSection('products')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer">
                 Products
               </div>
-              <div @click="scrollTo('contact')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
+              <div @click="scrollToSection('contact')" class="p-1 px-2 fs-sm16 fw-semibold cursor-pointer text-nowrap">
                 Contact Us
               </div>
             </div>
@@ -77,19 +77,19 @@
       <div>
         <div
           class="vw-100 d-sm-none d-flex fixed-bottom bg-light justify-content-evenly align-items-center fs-sm12 user-select-none">
-          <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('home')">
+          <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollToSection('home')">
             <iconify-icon icon="cil:home" width="20"></iconify-icon>
             <span class="fw-bold">Home</span>
           </div>
-          <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('about')">
+          <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollToSection('about')">
             <iconify-icon icon="solar:chat-round-like-broken" width="20"></iconify-icon>
             <span class="fw-bold">About</span>
           </div>
-          <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('products')">
+          <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollToSection('products')">
             <iconify-icon icon="bi:box" width="20"></iconify-icon>
             <span class="fw-bold">Products</span>
           </div>
-          <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollTo('contact')">
+          <div class="d-flex flex-column align-items-center p-2 gap-1" @click="scrollToSection('contact')">
             <iconify-icon icon="grommet-icons:contact-info" width="20"></iconify-icon>
             <span class="fw-bold">Contact</span>
           </div>
@@ -118,7 +118,8 @@
                   kue istimewa untuk momen
                   bahagia dengan keluarga</span>
                 <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                  <div class="btn-cust-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
+                  <div class="btn-cust-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer"
+                    @click="scrollToSection('about')">
                     Get Started
                   </div>
                   <div class="d-none d-sm-block d-md-none">
@@ -148,7 +149,8 @@
                 <span class="fs-sm16 fw-semibold">Bersama keluarga, lengkapi momen berharga dengan kue lezat kami.
                   Buatlah setiap momen terasa istimewa dengan rasa yang nikmat.</span>
                 <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                  <div class="btn-cust-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
+                  <div class="btn-cust-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer"
+                    @click="scrollToSection('about')">
                     Get Started
                   </div>
                   <div class="d-none d-sm-block d-md-none">
@@ -179,7 +181,8 @@
                 <span class="fs-sm16 fw-semibold">Setiap momen akan lebih terasa istimewa dengan kue sehat yang dibuat
                   dengan penuh cinta</span>
                 <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                  <div class="btn-cust-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer" @click="scrollTo('about')">
+                  <div class="btn-cust-primary px-3 p-1 mx-auto mx-sm-0 cursor-pointer"
+                    @click="scrollToSection('about')">
                     Get Started
                   </div>
                   <div class="d-none d-sm-block d-md-none">
@@ -378,7 +381,8 @@
         </div>
       </div>
       <!-- FAQ -->
-      <div class="row bg-glass p-5 mt-5 justify-content-center text-base" data-aos="zoom-in" x-data="{more:0}">
+      <div class="row bg-glass py-5 px-2 px-sm-5 mt-5 justify-content-center text-base" data-aos="zoom-in"
+        x-data="{more:0}">
         <div class="col-12 d-flex flex-column justify-content-center">
           <div class="why fs-sm20 fw-semibold mx-auto">
             <span class="text-primary">Frequently Asked Question</span>
@@ -746,7 +750,7 @@
     <footer class="justify-content-center w-100 bg-footer text-white p-4 px-md-5">
       <div class="container">
         <div class="footer-logo d-flex">
-          <div class="text-nowrap d-flex flex-row">
+          <div onclick="scrollToSection('home')" class="text-nowrap d-flex flex-row  cursor-pointer">
             <span class="fs-sm24 fw-semibold px-3">
               Ilra CakeArt
             </span>
@@ -779,16 +783,17 @@
             <span class="fw-semibold fs-sm16">Jelajahi IlraCake</span>
             <div class="row flex-column ms-2 mt-2 gap-2 border-start border-base">
               <div>
-                <span @click="scrollTo('home')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Home</span>
+                <span onclick="scrollToSection('home')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Home</span>
               </div>
               <div>
-                <span @click="scrollTo('about')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">About</span>
+                <span onclick="scrollToSection('about')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">About</span>
               </div>
               <div>
-                <span @click="scrollTo('products')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Products</span>
+                <span onclick="scrollToSection('products')"
+                  class="fw-semibold fs-sm12 p-2 cursor-pointer ">Products</span>
               </div>
               <div>
-                <span @click="scrollTo('contact')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Contact
+                <span onclick="scrollToSection('contact')" class="fw-semibold fs-sm12 p-2 cursor-pointer ">Contact
                   Us</span>
               </div>
             </div>
@@ -831,7 +836,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 x-text="cake.name" class="modal-title fs-sm24"></h1>
-              <button type="button" class="btn-cust-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="d-flex flex-column flex-sm-row gap-3">
